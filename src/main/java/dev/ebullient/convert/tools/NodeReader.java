@@ -1,6 +1,7 @@
 package dev.ebullient.convert.tools;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -21,7 +22,7 @@ public interface NodeReader {
 
         void appendEntryToText(List<String> inner, JsonNode target, String join);
 
-        String join(String join, List<String> inner);
+        String join(String join, Collection<String> inner);
 
         String linkify(T type, String s);
 
@@ -84,6 +85,18 @@ public interface NodeReader {
         return text == null ? value : text;
     }
 
+    default String bonusOrNull(JsonNode x) {
+        JsonNode value = getFrom(x);
+        if (value == null) {
+            return null;
+        }
+        if (!value.isNumber()) {
+            throw new IllegalArgumentException("Can only work with numbers: " + value);
+        }
+        int n = value.asInt();
+        return (n >= 0 ? "+" : "") + n;
+    }
+
     default List<String> getListOfStrings(JsonNode source, Tui tui) {
         JsonNode target = getFrom(source);
         if (target == null) {
@@ -104,10 +117,6 @@ public interface NodeReader {
         return map == null ? Map.of() : map;
     }
 
-    default String replaceTextFrom(JsonNode node, Converter<?> replacer) {
-        return replacer.replaceText(getTextOrEmpty(node));
-    }
-
     default String transformTextFrom(JsonNode source, String join, Converter<?> replacer) {
         JsonNode target = getFrom(source);
         if (target == null) {
@@ -118,7 +127,11 @@ public interface NodeReader {
         return replacer.join(join, inner);
     }
 
-    default List<String> transformListFrom(JsonNode node, Converter<?> convert) {
+    default String replaceTextFrom(JsonNode node, Converter<?> replacer) {
+        return replacer.replaceText(getTextOrEmpty(node));
+    }
+
+    default List<String> replaceTextFromList(JsonNode node, Converter<?> convert) {
         List<String> list = getListOfStrings(node, convert.tui());
         return list.stream().map(s -> convert.replaceText(s)).collect(Collectors.toList());
     }
@@ -157,12 +170,12 @@ public interface NodeReader {
         return StreamSupport.stream(result.spliterator(), false);
     }
 
-    default <T> T fieldFromTo(JsonNode source, TypeReference<T> targetRef, Tui tui) {
-        return tui.readJsonValue(source.get(this.nodeName()), targetRef);
-    }
-
     default <T> T fieldFromTo(JsonNode source, Class<T> classTarget, Tui tui) {
         return tui.readJsonValue(source.get(this.nodeName()), classTarget);
+    }
+
+    default <T> T fieldFromTo(JsonNode source, TypeReference<T> targetRef, Tui tui) {
+        return tui.readJsonValue(source.get(this.nodeName()), targetRef);
     }
 
     default boolean valueEquals(JsonNode previous, JsonNode next) {

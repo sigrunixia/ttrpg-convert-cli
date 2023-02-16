@@ -2,6 +2,8 @@ package dev.ebullient.convert.tools.pf2e;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -16,13 +18,11 @@ public class Json2QuteFeat extends Json2QuteBase {
 
     @Override
     protected QuteFeat buildQuteResource() {
-        List<String> tags = new ArrayList<>(sources.getSourceTags());
+        Set<String> tags = new TreeSet<>(sources.getSourceTags());
         List<String> text = new ArrayList<>();
 
         appendEntryToText(text, Field.entries.getFrom(rootNode), "##");
         appendFootnotes(text, 0);
-
-        NumberUnitEntry jsonActivity = Pf2eFeat.activity.fieldFromTo(rootNode, NumberUnitEntry.class, tui());
 
         List<String> leadsTo = Pf2eFeat.leadsTo.getListOfStrings(rootNode, tui())
                 .stream()
@@ -31,11 +31,11 @@ public class Json2QuteFeat extends Json2QuteBase {
 
         return new QuteFeat(sources, text, tags,
                 collectTraitsFrom(rootNode, tags),
-                Field.alias.transformListFrom(rootNode, this),
+                Field.alias.replaceTextFromList(rootNode, this),
                 Pf2eFeat.level.getTextOrDefault(rootNode, "1"),
                 Pf2eFeat.access.transformTextFrom(rootNode, ", ", this),
                 getFrequency(rootNode),
-                jsonActivity == null ? null : jsonActivity.toQuteActivity(this),
+                Pf2eTypeReader.getQuteActivity(rootNode, Pf2eFeat.activity, this),
                 Pf2eFeat.trigger.transformTextFrom(rootNode, ", ", this),
                 Pf2eFeat.cost.transformTextFrom(rootNode, ", ", this),
                 Field.requirements.transformTextFrom(rootNode, ", ", this),
@@ -60,15 +60,13 @@ public class Json2QuteFeat extends Json2QuteBase {
         appendEntryToText(text, Field.entries.getFrom(rootNode), "##");
         appendFootnotes(text, 0);
 
-        NumberUnitEntry jsonActivity = Pf2eFeat.activity.fieldFromTo(rootNode, NumberUnitEntry.class, tui());
-
         return new QuteFeat(sources, text, tags,
                 collectTraitsFrom(rootNode, tags),
                 List.of(),
                 dedicationLevel,
                 Pf2eFeat.access.transformTextFrom(rootNode, ", ", this),
                 getFrequency(rootNode),
-                jsonActivity == null ? null : jsonActivity.toQuteActivity(this),
+                Pf2eTypeReader.getQuteActivity(rootNode, Pf2eFeat.activity, this),
                 Pf2eFeat.trigger.transformTextFrom(rootNode, ", ", this),
                 Pf2eFeat.cost.transformTextFrom(rootNode, ", ", this),
                 Field.requirements.transformTextFrom(rootNode, ", ", this),

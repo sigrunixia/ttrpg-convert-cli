@@ -41,13 +41,13 @@ public class Json2QuteDeity extends Json2QuteBase {
         String followerAlignment = join(", ", toAlignments(alignNode, Pf2eDeity.followerAlignment));
 
         return new QuteDeity(sources, text, tags,
-                Field.alias.transformListFrom(rootNode, this),
+                Field.alias.replaceTextFromList(rootNode, this),
                 category,
                 join(", ", Pf2eDeity.pantheon.linkifyListFrom(rootNode, Pf2eIndexType.deity, this)),
                 alignment, followerAlignment,
                 Pf2eDeity.areasOfConcern.transformTextFrom(rootNode, ", ", this),
-                commandmentToString(Pf2eDeity.edict.transformListFrom(rootNode, this)),
-                commandmentToString(Pf2eDeity.anathema.transformListFrom(rootNode, this)),
+                commandmentToString(Pf2eDeity.edict.replaceTextFromList(rootNode, this)),
+                commandmentToString(Pf2eDeity.anathema.replaceTextFromList(rootNode, this)),
                 buildCleric(),
                 buildAvatar(tags),
                 buildIntercession());
@@ -178,24 +178,8 @@ public class Json2QuteDeity extends Json2QuteBase {
         String ranged = findRange(actionNode);
 
         action.actionType = ranged == null ? "Melee" : "Ranged";
-        action.activityType = Pf2eTypeActivity.single.toQuteActivityType(this, null);
-
-        String damage = Pf2eDeity.damage.getTextOrNull(actionNode);
-        String damage2 = Pf2eDeity.damage2.getTextOrNull(actionNode);
-
-        action.damage = "";
-        if (damage != null) {
-            action.damage += replaceText(String.format("{@damage %s} %s",
-                    damage,
-                    Pf2eDeity.damageType.getTextOrEmpty(actionNode)));
-        }
-        if (damage2 != null) {
-            action.damage += replaceText(String.format("%s{@damage %s} %s",
-                    damage == null ? "" : " and ",
-                    damage2,
-                    Pf2eDeity.damageType2.getTextOrEmpty(actionNode)));
-        }
-
+        action.activityType = Pf2eActivity.single.toQuteActivity(this, null);
+        action.damage = Pf2eWeaponData.getDamageString(actionNode, this);
         action.note = replaceText(Pf2eDeity.note.getTextOrNull(actionNode));
         return action;
     }

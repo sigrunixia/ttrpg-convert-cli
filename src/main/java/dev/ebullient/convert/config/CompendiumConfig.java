@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import dev.ebullient.convert.io.Tui;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 
 public class CompendiumConfig {
     final static Path CWD = Path.of(".");
@@ -31,6 +32,7 @@ public class CompendiumConfig {
     String tagPrefix = ""; // TODO: empty or ends with '/'
     PathAttributes paths;
     boolean allSources = false;
+    boolean diceRollerAlways = false;
     final Set<String> allowedSources = new HashSet<>();
     final Set<String> includedKeys = new HashSet<>();
     final Set<String> includedGroups = new HashSet<>();
@@ -51,6 +53,10 @@ public class CompendiumConfig {
 
     public Datasource datasource() {
         return datasource;
+    }
+
+    public boolean alwaysUseDiceRoller() {
+        return diceRollerAlways;
     }
 
     public boolean allSources() {
@@ -217,6 +223,11 @@ public class CompendiumConfig {
             templatePaths.verify(tui);
         }
 
+        public void setAlwaysUseDiceRoller(boolean diceRollerAlways) {
+            CompendiumConfig cfg = TtrpgConfig.getConfig();
+            cfg.diceRollerAlways = diceRollerAlways;
+        }
+
         /** Parse the config file at the given path */
         public boolean readConfiguration(Path configPath) {
             try {
@@ -264,6 +275,7 @@ public class CompendiumConfig {
             InputConfig input = Tui.MAPPER.convertValue(node, InputConfig.class);
 
             config.addSources(input.from);
+            config.diceRollerAlways |= input.diceRollerAlways;
 
             input.include.forEach(s -> config.includedKeys.add(s.toLowerCase()));
             input.includeGroup.forEach(s -> config.includedGroups.add(s.toLowerCase()));
@@ -338,6 +350,7 @@ public class CompendiumConfig {
     }
 
     private enum ConfigKeys {
+        diceRollerAlways,
         exclude,
         excludePattern,
         from,
@@ -371,6 +384,7 @@ public class CompendiumConfig {
         }
     }
 
+    @RegisterForReflection
     public static class InputConfig {
         @JsonProperty(required = false)
         List<String> from = new ArrayList<>();
@@ -393,11 +407,15 @@ public class CompendiumConfig {
         @JsonProperty(required = false)
         Map<String, String> template = new HashMap<>();
 
+        @JsonProperty(required = false)
+        boolean diceRollerAlways = false;
+
         @JsonAlias({ "convert" })
         @JsonProperty(value = "full-source", required = false)
         FullSource fullSource = new FullSource();
     }
 
+    @RegisterForReflection
     static class FullSource {
         @JsonProperty(required = false)
         List<String> book = new ArrayList<>();
@@ -406,6 +424,7 @@ public class CompendiumConfig {
         List<String> adventure = new ArrayList<>();
     }
 
+    @RegisterForReflection
     static class InputPaths {
         @JsonProperty(required = false)
         String compendium;

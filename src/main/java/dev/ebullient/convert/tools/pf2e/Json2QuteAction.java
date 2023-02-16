@@ -1,7 +1,10 @@
 package dev.ebullient.convert.tools.pf2e;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -18,14 +21,13 @@ public class Json2QuteAction extends Json2QuteBase {
 
     @Override
     protected QuteAction buildQuteResource() {
-        List<String> tags = new ArrayList<>(sources.getSourceTags());
+        Set<String> tags = new TreeSet<>(sources.getSourceTags());
         List<String> text = new ArrayList<>();
 
         appendEntryToText(text, Field.entries.getFrom(rootNode), "##");
         appendEntryToText(text, Pf2eAction.info.getFrom(rootNode), null);
         appendFootnotes(text, 0);
 
-        NumberUnitEntry jsonActivity = Pf2eAction.activity.fieldFromTo(rootNode, NumberUnitEntry.class, tui());
         ActionType actionType = Pf2eAction.actionType.fieldFromTo(rootNode, ActionType.class, tui());
 
         if (actionType == null) {
@@ -38,12 +40,12 @@ public class Json2QuteAction extends Json2QuteBase {
                 getSources(), text, tags,
                 Pf2eAction.cost.transformTextFrom(rootNode, ", ", this),
                 Pf2eAction.trigger.transformTextFrom(rootNode, ", ", this),
-                Field.alias.transformListFrom(rootNode, this),
+                Field.alias.replaceTextFromList(rootNode, this),
                 collectTraitsFrom(rootNode, tags),
                 Pf2eAction.prerequisites.transformTextFrom(rootNode, ", ", this),
                 Field.requirements.replaceTextFrom(rootNode, this),
                 getFrequency(rootNode),
-                jsonActivity == null ? null : jsonActivity.toQuteActivity(this),
+                Pf2eTypeReader.getQuteActivity(rootNode, Pf2eAction.activity, this),
                 actionType == null ? null : actionType.build(this));
     }
 
@@ -61,7 +63,7 @@ public class Json2QuteAction extends Json2QuteBase {
         public List<String> subclass;
         public List<String> variantrule;
 
-        public void addTags(JsonSource convert, List<String> tags) {
+        public void addTags(JsonSource convert, Collection<String> tags) {
             if (isBasic()) {
                 tags.add(convert.cfg().tagOf("action", "basic"));
             }

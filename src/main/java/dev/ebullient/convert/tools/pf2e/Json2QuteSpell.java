@@ -1,9 +1,12 @@
 package dev.ebullient.convert.tools.pf2e;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -30,13 +33,13 @@ public class Json2QuteSpell extends Json2QuteBase {
 
     @Override
     protected Pf2eQuteBase buildQuteResource() {
-        List<String> tags = new ArrayList<>(sources.getSourceTags());
+        Set<String> tags = new TreeSet<>(sources.getSourceTags());
         List<String> text = new ArrayList<>();
 
         appendEntryToText(text, Field.entries.getFrom(rootNode), "##");
         appendFootnotes(text, 0);
 
-        List<String> traits = collectTraitsFrom(rootNode, tags);
+        Collection<String> traits = collectTraitsFrom(rootNode, tags);
 
         boolean focus = Pf2eSpell.focus.booleanOrDefault(rootNode, false);
         String level = Pf2eSpell.level.getTextOrDefault(rootNode, "1");
@@ -80,7 +83,7 @@ public class Json2QuteSpell extends Json2QuteBase {
         return new QuteSpell(sources, text, tags,
                 level, toTitleCase(type),
                 traits,
-                Field.alias.transformListFrom(rootNode, this),
+                Field.alias.replaceTextFromList(rootNode, this),
                 getQuteSpellCasting(),
                 getQuteSpellTarget(tags),
                 getQuteSaveDuration(),
@@ -135,7 +138,7 @@ public class Json2QuteSpell extends Json2QuteBase {
         return saveDuration;
     }
 
-    QuteSpellTarget getQuteSpellTarget(List<String> tags) {
+    QuteSpellTarget getQuteSpellTarget(Collection<String> tags) {
         String targets = replaceText(Pf2eSpell.targets.getTextOrNull(rootNode));
         NumberUnitEntry range = Pf2eSpell.range.fieldFromTo(rootNode, NumberUnitEntry.class, tui());
         SpellArea area = Pf2eSpell.area.fieldFromTo(rootNode, SpellArea.class, tui());

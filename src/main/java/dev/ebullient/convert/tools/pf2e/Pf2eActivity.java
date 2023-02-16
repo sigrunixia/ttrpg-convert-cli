@@ -3,9 +3,9 @@ package dev.ebullient.convert.tools.pf2e;
 import java.nio.file.Path;
 
 import dev.ebullient.convert.io.Tui;
-import dev.ebullient.convert.tools.pf2e.qute.QuteActivityType;
+import dev.ebullient.convert.tools.pf2e.qute.QuteDataActivity;
 
-public enum Pf2eTypeActivity {
+public enum Pf2eActivity {
     single("Single Action", ">", "single_action.svg"),
     two("Two-Action", ">>", "two_actions.svg"),
     three("Three-Action", ">>>", "three_actions.svg"),
@@ -22,7 +22,7 @@ public enum Pf2eTypeActivity {
     final String glyph;
     final String targetFileName;
 
-    Pf2eTypeActivity(String longName, String textGlyph, String glyph) {
+    Pf2eActivity(String longName, String textGlyph, String glyph) {
         this.longName = longName;
         this.markdownName = longName.replace(" ", "%20");
         this.textGlyph = textGlyph;
@@ -32,7 +32,7 @@ public enum Pf2eTypeActivity {
         this.targetFileName = Tui.slugify(glyph.substring(0, x)) + glyph.substring(x);
     }
 
-    public static Pf2eTypeActivity toActivity(String unit, int number) {
+    public static Pf2eActivity toActivity(String unit, int number) {
         switch (unit) {
             case "single":
             case "action":
@@ -78,9 +78,9 @@ public enum Pf2eTypeActivity {
         return String.format("%s%s", rulesRoot, DOC_PATH);
     }
 
-    public QuteActivityType toQuteActivityType(JsonSource convert, String text) {
+    public QuteDataActivity toQuteActivity(JsonSource convert, String text) {
         Path relativeTarget = Path.of("img", targetFileName);
-        return new QuteActivityType(
+        return new QuteDataActivity(
                 text == null ? longName : text,
                 Pf2eSources.buildStreamImageRef(convert.index(), glyph, relativeTarget, longName),
                 textGlyph,

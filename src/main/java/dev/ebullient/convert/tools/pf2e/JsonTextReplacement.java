@@ -2,6 +2,7 @@ package dev.ebullient.convert.tools.pf2e;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
@@ -41,7 +42,7 @@ public interface JsonTextReplacement extends NodeReader.Converter<Pf2eIndexType>
         return index().cfg();
     }
 
-    default String join(String joiner, List<String> list) {
+    default String join(String joiner, Collection<String> list) {
         if (list == null || list.isEmpty()) {
             return "";
         }
@@ -94,6 +95,16 @@ public interface JsonTextReplacement extends NodeReader.Converter<Pf2eIndexType>
                 .collect(Collectors.joining(" "));
     }
 
+    default List<String> toListOfStrings(JsonNode source) {
+        if (source == null) {
+            return List.of();
+        } else if (source.isTextual()) {
+            return List.of(source.asText());
+        }
+        List<String> list = tui().readJsonValue(source, Tui.LIST_STRING);
+        return list == null ? List.of() : list;
+    }
+
     default String replaceText(JsonNode input) {
         if (input == null) {
             return null;
@@ -114,9 +125,14 @@ public interface JsonTextReplacement extends NodeReader.Converter<Pf2eIndexType>
                 .replaceAll((match) -> {
                     int pipe = match.group(2).indexOf("|");
                     if (pipe < 0) {
-                        return match.group(2);
+                        return cfg().alwaysUseDiceRoller()
+                                ? "`dice: " + match.group(2) + '`'
+                                : '`' + match.group(2) + '`';
                     }
-                    return match.group(2).substring(0, pipe);
+                    String dice = match.group(2).substring(0, pipe);
+                    return cfg().alwaysUseDiceRoller()
+                            ? "`dice: " + dice + '`'
+                            : '`' + dice + '`';
                 });
 
         result = chancePattern.matcher(result)
@@ -217,28 +233,28 @@ public interface JsonTextReplacement extends NodeReader.Converter<Pf2eIndexType>
     }
 
     default String replaceActionAs(MatchResult match) {
-        final Pf2eTypeActivity type;
+        final Pf2eActivity type;
         switch (match.group(1).toLowerCase()) {
             case "1":
             case "a":
-                type = Pf2eTypeActivity.single;
+                type = Pf2eActivity.single;
                 break;
             case "2":
             case "d":
-                type = Pf2eTypeActivity.two;
+                type = Pf2eActivity.two;
                 break;
             case "3":
             case "t":
-                type = Pf2eTypeActivity.three;
+                type = Pf2eActivity.three;
                 break;
             case "f":
-                type = Pf2eTypeActivity.free;
+                type = Pf2eActivity.free;
                 break;
             case "r":
-                type = Pf2eTypeActivity.reaction;
+                type = Pf2eActivity.reaction;
                 break;
             default:
-                type = Pf2eTypeActivity.varies;
+                type = Pf2eActivity.varies;
                 break;
         }
         return type.linkify(index().rulesVaultRoot());

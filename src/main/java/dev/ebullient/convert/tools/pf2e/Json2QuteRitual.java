@@ -1,7 +1,10 @@
 package dev.ebullient.convert.tools.pf2e;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -22,7 +25,7 @@ public class Json2QuteRitual extends Json2QuteSpell {
 
     @Override
     protected Pf2eQuteBase buildQuteResource() {
-        List<String> tags = new ArrayList<>(sources.getSourceTags());
+        Set<String> tags = new TreeSet<>(sources.getSourceTags());
         List<String> text = new ArrayList<>();
 
         appendEntryToText(text, Field.entries.getFrom(rootNode), "##");
@@ -34,7 +37,7 @@ public class Json2QuteRitual extends Json2QuteSpell {
         return new QuteRitual(sources, text, tags,
                 level, "Ritual",
                 collectTraitsFrom(rootNode, tags),
-                Field.alias.transformListFrom(rootNode, this),
+                Field.alias.replaceTextFromList(rootNode, this),
                 getQuteRitualCast(),
                 getQuteRitualChecks(),
                 getQuteRitualSpellTarget(tags),
@@ -43,7 +46,7 @@ public class Json2QuteRitual extends Json2QuteSpell {
                 getHeightenedCast());
     }
 
-    QuteSpellTarget getQuteRitualSpellTarget(List<String> tags) {
+    QuteSpellTarget getQuteRitualSpellTarget(Collection<String> tags) {
         String targets = replaceText(Pf2eSpell.targets.getTextOrNull(rootNode));
         JsonNode rangeEntry = Pf2eSpell.range.getFieldFrom(rootNode, Field.entry);
         SpellArea area = Pf2eSpell.area.fieldFromTo(rootNode, SpellArea.class, tui());
