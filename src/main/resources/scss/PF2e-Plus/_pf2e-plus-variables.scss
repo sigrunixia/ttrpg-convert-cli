@@ -1,0 +1,91 @@
+// Pathfinder Font
+$pathfinder-font-family: 'Pathfinder' !default;
+$pathfinder-font-path: 'Pathfinder' !default;
+
+$pathfinder-1action: '\2b3b';
+$pathfinder-2actions: '\2b3a';
+$pathfinder-3actions: '\2b3d';
+$pathfinder-delay: '\2b53';
+$pathfinder-reaction: '\2b32';
+
+
+$dark-theme-br: 10%;
+
+@function darken-if($color, $amount) {
+  @if selector-nest('.theme-dark') {
+    @return darken($color, $amount);
+  } @else {
+    @return $color;
+  }
+}
+
+////
+// Palette
+/////
+
+$bg-code-whitespc: hsl(30, 21%, 95%);
+$pf2-ftl-active-blue: hsl(210, 46%, 36%);
+$pf2e-ftl-active-red: hsl(0, 100%, 20%);
+$pf2e-ft-bold: hsl(16, 100%, 32%);
+$pf2e-ft-h1: hsl(330, 95%, 40%);
+$pf2e-ft-h2: hsl(220, 95%, 20%);
+$pf2e-ft-h3: hsl(0, 95%, 20%);
+$pf2e-ft-h4: hsl(15, 35%, 50%);
+$pf2e-ft-h5: hsl(15, 60%, 40%);
+$pf2e-ft-h6: hsl(95, 50%, 45%);
+$pf2e-font-inactive-link-red: rgba(190, 20, 20, 1);
+$pf2e-font-italic-green-trait: hsl(110, 36%, 52%);
+$pf2e-font-text-code: hsl(51deg 100% 18%);
+$pf2e-font-text-color: hsl(0, 0%, 15%);
+$pf2e-font-unresolved-hover-link: rgba(12, 102, 103, 1);
+$pf2e-ftl-unresolved: hsl(200, 39%, 32%);
+$pf2e-font-text-italic: hsl(100, 50%, 30%);
+
+$pf2e-background-code-whitespace: hsl(0, 0%, 15%);
+$pf2e-font-active-link-blue: hsl(210, 100%, 68%);
+$pf2e-font-active-link-red: hsl(0, 28%, 30%);
+$pf2e-font-bold-bright: hsl(16, 100%, 42%);
+
+$pf2e-font-h1-color: hsl(330, 97%, 39%);
+$pf2e-font-h2-color: hsl(222, 100%, 73%);
+$pf2e-font-h3-color: hsl(0, 100%, 73%);
+$pf2e-font-h4-color: hsl(14, 66%, 66%);
+$pf2e-font-h5-color: hsl(11, 62%, 37%);
+$pf2e-font-h6-color: hsl(96, 42%, 44%);
+$pf2e-font-inactive-link-red: hsl(0, 34%, 39%);
+$pf2e-font-italic-green-trait: hsl(110, 50%, 63%);
+$pf2e-font-text-code: hsl(51, 100%, 50%);
+$pf2e-font-text-color: hsl(0, 0%, 14%);
+$pf2e-font-text-italic: hsl(100, 50%, 30%);
+$pf2e-font-unresolved-hover-link: hsl(182, 80%, 38%);
+$pf2e-font-unresolved-link: hsl(200, 63%, 62%);
+
+
+//
+// Link Box Shadows
+//
+
+/*! Link Box Shadows */
+$box-shadow-condition: darken-if(hsl(120, 100%, 20%), $dark-theme-br);
+$box-shadow-skills: darken-if(hsl(273, 34%, 72%), $dark-theme-br);
+$box-shadow-traits: darken-if(hsl(5, 87%, 18%), $dark-theme-br);
+$box-shadow-alignment: darken-if(hsl(230, 23%, 45%), $dark-theme-br);
+$box-shadow-size: darken-if(hsl(142, 24%, 39%), $dark-theme-br);
+$box-shadow-common: darken-if(hsl(204, 19%, 26%), $dark-theme-br);
+$box-shadow-rare: darken-if(hsl(222, 79%, 21%), $dark-theme-br);
+$box-shadow-uncommon: darken-if(hsl(15, 37%, 41%), $dark-theme-br);
+$box-shadow-unique: darken-if(hsl(278, 59%, 26%), $dark-theme-br);
+
+/////
+// General Styling
+/////
+
+$pf2e-font-decoration-link: underline;
+$pf2e-font-family-code: 'Source Code Pro', 'SF Mono', Monaco, Inconsolata, 'Fira Mono', 'Droid Sans Mono', monospace;
+$pf2e-font-text-size-code: 0.8em;
+$pf2e-font-weight-link: 700;
+
+
+//////
+// Font Sizes
+//////

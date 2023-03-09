@@ -1,0 +1,10 @@
+@use '../../pf2e-variables';
+
+// Mixin to add Strong Coloration
+
+@mixin seed-strong {
+   strong {
+    color: pf2e-variables.$call-ftb;
+    padding-inline: 0;
+  }
+}

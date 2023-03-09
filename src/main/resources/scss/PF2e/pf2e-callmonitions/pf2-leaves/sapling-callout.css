@@ -1,0 +1,264 @@
+/*! 
+Legend
+
+Text:
+b = Bold 
+c = Color
+f = Font
+i = Italic
+l = Link
+p = Paragraph/Body/css p
+s = Size
+t = Text
+u = Underline
+-A = Alternative
+
+
+Callouts/Tables:
+call = Callout
+b = Border
+bg = Background
+T = Title
+-c = Column
+-r = Row
+H = Header
+-A = Alternative
+
+*/
+root {
+  --admonition-details-icon: $admon-detail;
+  --admonition-margin-bottom: $admon-m-B;
+  --admonition-margin-bottom-lp: $admon-m-B-lp;
+  --admonition-margin-top: $admon-m-t;
+  --admonition-margin-top-lp: $admon-m-t-lp;
+}
+
+.callout[data-callout=pf2-beige] {
+  --callout-color: #edd7ab;
+  --callout-content-background: #edd7ab;
+  background-color: #edd7ab;
+  border-color: hsla(40, 65%, 80%, 0.25);
+}
+.callout[data-callout=pf2-beige] .callout-title {
+  background-color: #edd7ab;
+}
+.callout[data-callout=pf2-beige] .callout-title .callout-title-inner {
+  background-color: #edd7ab;
+}
+.callout[data-callout=pf2-beige] .callout-content {
+  background-color: #edd7ab;
+}
+.callout[data-callout=pf2-beige] .callout-content blockquote {
+  background-color: #edd7ab, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-brown] {
+  --callout-color: #d4ccc4;
+  --callout-content-background: #d4ccc4;
+  background-color: #d4ccc4;
+  border-color: hsla(30, 15%, 80%, 0.25);
+}
+.callout[data-callout=pf2-brown] .callout-title {
+  background-color: #d4ccc4;
+}
+.callout[data-callout=pf2-brown] .callout-title .callout-title-inner {
+  background-color: #d4ccc4;
+}
+.callout[data-callout=pf2-brown] .callout-content {
+  background-color: #d4ccc4;
+}
+.callout[data-callout=pf2-brown] .callout-content blockquote {
+  background-color: #d4ccc4, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-example] {
+  --callout-color: #bdfa9e;
+  --callout-content-background: #bdfa9e;
+  background-color: #bdfa9e;
+  border-color: hsla(100, 90%, 80%, 0.25);
+}
+.callout[data-callout=pf2-example] .callout-title {
+  background-color: #bdfa9e;
+}
+.callout[data-callout=pf2-example] .callout-title .callout-title-inner {
+  background-color: #bdfa9e;
+}
+.callout[data-callout=pf2-example] .callout-content {
+  background-color: #bdfa9e;
+}
+.callout[data-callout=pf2-example] .callout-content blockquote {
+  background-color: #bdfa9e, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-inset] {
+  --callout-color: #e0c9b8;
+  --callout-content-background: #e0c9b8;
+  background-color: #e0c9b8;
+  border-color: hsla(25, 40%, 80%, 0.25);
+}
+.callout[data-callout=pf2-inset] .callout-title {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-inset] .callout-title .callout-title-inner {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-inset] .callout-content {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-inset] .callout-content blockquote {
+  background-color: #e0c9b8, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-key-box] {
+  --callout-color: #bef4e2;
+  --callout-content-background: #bef4e2;
+  background-color: #bef4e2;
+  border-color: hsla(160, 70%, 85%, 0.25);
+}
+.callout[data-callout=pf2-key-box] .callout-title {
+  background-color: #bef4e2;
+}
+.callout[data-callout=pf2-key-box] .callout-title .callout-title-inner {
+  background-color: #bef4e2;
+}
+.callout[data-callout=pf2-key-box] .callout-content {
+  background-color: #bef4e2;
+}
+.callout[data-callout=pf2-key-box] .callout-content blockquote {
+  background-color: #bef4e2, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-note] {
+  --callout-color: #c7d1c9;
+  --callout-content-background: #c7d1c9;
+  background-color: #c7d1c9;
+  border-color: hsla(130, 10%, 80%, 0.25);
+}
+.callout[data-callout=pf2-note] .callout-title {
+  background-color: #c7d1c9;
+}
+.callout[data-callout=pf2-note] .callout-title .callout-title-inner {
+  background-color: #c7d1c9;
+}
+.callout[data-callout=pf2-note] .callout-content {
+  background-color: #c7d1c9;
+}
+.callout[data-callout=pf2-note] .callout-content blockquote {
+  background-color: #c7d1c9, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-paper] {
+  --callout-color: #ded8ba;
+  --callout-content-background: #ded8ba;
+  background-color: #ded8ba;
+  border-color: hsla(50, 35%, 80%, 0.25);
+}
+.callout[data-callout=pf2-paper] .callout-title {
+  background-color: #ded8ba;
+}
+.callout[data-callout=pf2-paper] .callout-title .callout-title-inner {
+  background-color: #ded8ba;
+}
+.callout[data-callout=pf2-paper] .callout-content {
+  background-color: #ded8ba;
+}
+.callout[data-callout=pf2-paper] .callout-content blockquote {
+  background-color: #ded8ba, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-quote] {
+  --callout-color: #e0c2f0;
+  --callout-content-background: #e0c2f0;
+  background-color: #e0c2f0;
+  border-color: hsla(280, 60%, 85%, 0.25);
+}
+.callout[data-callout=pf2-quote] .callout-title {
+  background-color: #e0c2f0;
+}
+.callout[data-callout=pf2-quote] .callout-title .callout-title-inner {
+  background-color: #e0c2f0;
+}
+.callout[data-callout=pf2-quote] .callout-content {
+  background-color: #e0c2f0;
+}
+.callout[data-callout=pf2-quote] .callout-content blockquote {
+  background-color: #e0c2f0, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-red] {
+  --callout-color: #f0aea8;
+  --callout-content-background: #f0aea8;
+  background-color: #f0aea8;
+  border-color: hsla(5, 70%, 80%, 0.25);
+}
+.callout[data-callout=pf2-red] .callout-title {
+  background-color: #f0aea8;
+}
+.callout[data-callout=pf2-red] .callout-title .callout-title-inner {
+  background-color: #f0aea8;
+}
+.callout[data-callout=pf2-red] .callout-content {
+  background-color: #f0aea8;
+}
+.callout[data-callout=pf2-red] .callout-content blockquote {
+  background-color: #f0aea8, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-sidebar] {
+  --callout-color: #e0c9b8;
+  --callout-content-background: #e0c9b8;
+  background-color: #e0c9b8;
+  border-color: hsla(25, 40%, 80%, 0.25);
+}
+.callout[data-callout=pf2-sidebar] .callout-title {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-sidebar] .callout-title .callout-title-inner {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-sidebar] .callout-content {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-sidebar] .callout-content blockquote {
+  background-color: #e0c9b8, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-tip] {
+  --callout-color: #c6ecec;
+  --callout-content-background: #c6ecec;
+  background-color: #c6ecec;
+  border-color: hsla(180, 50%, 85%, 0.25);
+}
+.callout[data-callout=pf2-tip] .callout-title {
+  background-color: #c6ecec;
+}
+.callout[data-callout=pf2-tip] .callout-title .callout-title-inner {
+  background-color: #c6ecec;
+}
+.callout[data-callout=pf2-tip] .callout-content {
+  background-color: #c6ecec;
+}
+.callout[data-callout=pf2-tip] .callout-content blockquote {
+  background-color: #c6ecec, var(--callout-background-alpha);
+}
+
+.callout[data-callout=success-degree] {
+  --callout-color: #c4b3e6;
+  --callout-content-background: #c4b3e6;
+  background-color: #c4b3e6;
+  border-color: hsla(260, 50%, 80%, 0.25);
+}
+.callout[data-callout=success-degree] .callout-title {
+  background-color: #c4b3e6;
+}
+.callout[data-callout=success-degree] .callout-title .callout-title-inner {
+  background-color: #c4b3e6;
+}
+.callout[data-callout=success-degree] .callout-content {
+  background-color: #c4b3e6;
+}
+.callout[data-callout=success-degree] .callout-content blockquote {
+  background-color: #c4b3e6, var(--callout-background-alpha);
+}
+
+/*# sourceMappingURL=sapling-callout.css.map */

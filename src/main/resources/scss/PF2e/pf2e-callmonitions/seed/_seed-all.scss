@@ -1,0 +1,30 @@
+// Variables
+@use '../../pf2e-variables';
+//Mixins
+@use 'seed' as seed;
+@use 'seed-link' as seed-link;
+@use 'seed-strong' as seed-strong;
+@use 'seed-italic' as seed-italic;
+//Callout Only Mixins
+@use 'seed-dropshadow' as seed-dropshadow;
+//Admonition-Only Mixins
+@use 'seed-admon-empty' as admon-empty;
+
+// The Wrapper for generics Styling for nearly everything
+.pf2e {
+  .callout {
+    @include seed.seed;
+    @include seed-link.seed-link;
+    @include seed-strong.seed-strong;
+    @include seed-italic.seed-italic;
+    
+    @include seed-dropshadow.seed-dropshadow;
+  }
+  
+  .admonition {
+    @include seed.seed;
+    @include seed-link.seed-link;
+    @include seed-strong.seed-strong;
+    @include seed-italic.seed-italic;
+  }
+}

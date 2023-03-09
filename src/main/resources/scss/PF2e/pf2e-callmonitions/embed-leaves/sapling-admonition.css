@@ -1,0 +1,212 @@
+/*! 
+Legend
+
+Text:
+b = Bold 
+c = Color
+f = Font
+i = Italic
+l = Link
+p = Paragraph/Body/css p
+s = Size
+t = Text
+u = Underline
+-A = Alternative
+
+
+Callouts/Tables:
+call = Callout
+b = Border
+bg = Background
+T = Title
+-c = Column
+-r = Row
+H = Header
+-A = Alternative
+
+*/
+root {
+  --admonition-details-icon: $admon-detail;
+  --admonition-margin-bottom: $admon-m-B;
+  --admonition-margin-bottom-lp: $admon-m-B-lp;
+  --admonition-margin-top: $admon-m-t;
+  --admonition-margin-top-lp: $admon-m-t-lp;
+}
+
+.admonition[data-callout=embed-ability] {
+  --callout-color: #bdc9db;
+  --callout-content-background: #bdc9db;
+  background-color: #bdc9db;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=embed-ability] .admonition-title {
+  background-color: #bdc9db;
+}
+.admonition[data-callout=embed-ability] .admonition-content {
+  background-color: #bdc9db;
+}
+.admonition[data-callout=embed-ability] .admonition-content blockquote {
+  background-color: #bdc9db, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=embed-action] {
+  --callout-color: #e0beb8;
+  --callout-content-background: #e0beb8;
+  background-color: #e0beb8;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=embed-action] .admonition-title {
+  background-color: #e0beb8;
+}
+.admonition[data-callout=embed-action] .admonition-content {
+  background-color: #e0beb8;
+}
+.admonition[data-callout=embed-action] .admonition-content blockquote {
+  background-color: #e0beb8, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=embed-avatar] {
+  --callout-color: #f0d2a8;
+  --callout-content-background: #f0d2a8;
+  background-color: #f0d2a8;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=embed-avatar] .admonition-title {
+  background-color: #f0d2a8;
+}
+.admonition[data-callout=embed-avatar] .admonition-content {
+  background-color: #f0d2a8;
+}
+.admonition[data-callout=embed-avatar] .admonition-content blockquote {
+  background-color: #f0d2a8, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=embed-disease] {
+  --callout-color: #d9d7bf;
+  --callout-content-background: #d9d7bf;
+  background-color: #d9d7bf;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=embed-disease] .admonition-title {
+  background-color: #d9d7bf;
+}
+.admonition[data-callout=embed-disease] .admonition-content {
+  background-color: #d9d7bf;
+}
+.admonition[data-callout=embed-disease] .admonition-content blockquote {
+  background-color: #d9d7bf, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=embed-feat] {
+  --callout-color: #ceb8f9;
+  --callout-content-background: #ceb8f9;
+  background-color: #ceb8f9;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=embed-feat] .admonition-title {
+  background-color: #ceb8f9;
+}
+.admonition[data-callout=embed-feat] .admonition-content {
+  background-color: #ceb8f9;
+}
+.admonition[data-callout=embed-feat] .admonition-content blockquote {
+  background-color: #ceb8f9, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=embed-item] {
+  --callout-color: #fdb4c1;
+  --callout-content-background: #fdb4c1;
+  background-color: #fdb4c1;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=embed-item] .admonition-title {
+  background-color: #fdb4c1;
+}
+.admonition[data-callout=embed-item] .admonition-content {
+  background-color: #fdb4c1;
+}
+.admonition[data-callout=embed-item] .admonition-content blockquote {
+  background-color: #fdb4c1, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=embed-ritual] {
+  --callout-color: #c4d2d4;
+  --callout-content-background: #c4d2d4;
+  background-color: #c4d2d4;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=embed-ritual] .admonition-title {
+  background-color: #c4d2d4;
+}
+.admonition[data-callout=embed-ritual] .admonition-content {
+  background-color: #c4d2d4;
+}
+.admonition[data-callout=embed-ritual] .admonition-content blockquote {
+  background-color: #c4d2d4, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=inline-affliction] {
+  --callout-color: #e0ddb8;
+  --callout-content-background: #e0ddb8;
+  background-color: #e0ddb8;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=inline-affliction] .admonition-title {
+  background-color: #e0ddb8;
+}
+.admonition[data-callout=inline-affliction] .admonition-content {
+  background-color: #e0ddb8;
+}
+.admonition[data-callout=inline-affliction] .admonition-content blockquote {
+  background-color: #e0ddb8, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=inline-attack] {
+  --callout-color: #f0cca8;
+  --callout-content-background: #f0cca8;
+  background-color: #f0cca8;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=inline-attack] .admonition-title {
+  background-color: #f0cca8;
+}
+.admonition[data-callout=inline-attack] .admonition-content {
+  background-color: #f0cca8;
+}
+.admonition[data-callout=inline-attack] .admonition-content blockquote {
+  background-color: #f0cca8, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=pf2-note] {
+  --callout-color: #c7d1c9;
+  --callout-content-background: #c7d1c9;
+  background-color: #c7d1c9;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=pf2-note] .admonition-title {
+  background-color: #c7d1c9;
+}
+.admonition[data-callout=pf2-note] .admonition-content {
+  background-color: #c7d1c9;
+}
+.admonition[data-callout=pf2-note] .admonition-content blockquote {
+  background-color: #c7d1c9, var(--callout-background-alpha);
+}
+
+.admonition[data-callout=pf2-summary] {
+  --callout-color: #fbb6b6;
+  --callout-content-background: #fbb6b6;
+  background-color: #fbb6b6;
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.admonition[data-callout=pf2-summary] .admonition-title {
+  background-color: #fbb6b6;
+}
+.admonition[data-callout=pf2-summary] .admonition-content {
+  background-color: #fbb6b6;
+}
+.admonition[data-callout=pf2-summary] .admonition-content blockquote {
+  background-color: #fbb6b6, var(--callout-background-alpha);
+}
+
+/*# sourceMappingURL=sapling-admonition.css.map */

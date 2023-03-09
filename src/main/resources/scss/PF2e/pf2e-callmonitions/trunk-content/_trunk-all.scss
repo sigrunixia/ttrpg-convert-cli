@@ -1,0 +1,59 @@
+// Variables
+@use '../../pf2e-variables';
+
+//Mixins
+@use 'trunk-hover' as trunk-hover;
+@use '../seed/trunk-heading' as trunk-heading;
+@use 'trunk-lists' as trunk-lists;
+@use 'trunk-admon-content-copy' as admon-copy;
+
+// The Wrapper for generics Styling for nearly everything
+.pf2e {
+  // Callout First - Callout Title Branch
+  .callout {
+
+    & .callout-content {
+      @include trunk-heading.trunk-heading(1);
+      @include trunk-heading.trunk-heading(2);
+      @include trunk-heading.trunk-heading(3);
+      & h3 {
+        &::before {
+          display: none;
+        }
+
+        &::after,
+        .HyperMD-header-3::after {
+          display: none;
+        }
+      }
+      @include trunk-hover.content-hover;
+      @include trunk-lists.trunk-lists;
+    }
+
+
+  }
+
+  .admonition {
+    
+    & .admonition-content {
+      
+      @include trunk-heading.trunk-heading(1);
+      @include trunk-heading.trunk-heading(2);
+      @include trunk-heading.trunk-heading(3);
+      & h3 {
+        &::before {
+          display: none;
+        }
+
+        &::after,
+        .HyperMD-header-3::after {
+          display: none;
+        }
+      }
+      @include trunk-hover.content-hover;
+      @include trunk-lists.trunk-lists;
+      @include admon-copy.content-copy;
+    }
+
+  }
+}

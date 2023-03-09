@@ -1,0 +1,33 @@
+@use '../../pf2e-variables';
+
+// Mixin for Generic Styles
+@mixin seed {
+  --callout-background-alpha: 20%;
+  --callout-padding: 0.125em;
+  --callout-radius: 0.125em;
+  font-family: pf2e-variables.$call-ffp;
+  font-size: pf2e-variables.$call-ftsp;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  padding: 0.8125em;
+  position: relative;
+}
+
+//.admonition {
+//  margin-top: var(--admonition-margin-top);
+//  margin-bottom: var(--admonition-margin-bottom);
+//  box-shadow: 0 .2rem .5rem var(--background-modifier-box-shadow);
+//}
+
+
+//.callout {
+//  overflow: hidden;
+//  border-style: solid;
+//  border-color: rgba(var(--callout-color), var(--callout-border-opacity));
+//  border-width: var(--callout-border-width);
+//  border-radius: var(--callout-radius);
+//  margin: 1em 0;
+//  mix-blend-mode: var(--callout-blend-mode);
+//  background-color: rgba(var(--callout-color), 0.1);
+//  padding: var(--callout-padding);
+//}

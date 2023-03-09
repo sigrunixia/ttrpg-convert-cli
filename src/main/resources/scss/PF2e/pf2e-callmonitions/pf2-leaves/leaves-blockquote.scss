@@ -1,0 +1,11 @@
+@use '../../pf2e-variables';
+
+@mixin leaves-blockquotes {
+  border: unset;
+  // Just in case someone else has a border first...
+  padding: 5px 5px 5px 10px;
+  border-left: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+  margin-left: 0.75em;
+  margin-right: 0.75em;
+}

@@ -1,0 +1,91 @@
+/*! 
+Legend
+
+Text:
+b = Bold 
+c = Color
+f = Font
+i = Italic
+l = Link
+p = Paragraph/Body/css p
+s = Size
+t = Text
+u = Underline
+-A = Alternative
+
+
+Callouts/Tables:
+call = Callout
+b = Border
+bg = Background
+T = Title
+-c = Column
+-r = Row
+H = Header
+-A = Alternative
+
+*/
+root {
+  --admonition-details-icon: $admon-detail;
+  --admonition-margin-bottom: $admon-m-B;
+  --admonition-margin-bottom-lp: $admon-m-B-lp;
+  --admonition-margin-top: $admon-m-t;
+  --admonition-margin-top-lp: $admon-m-t-lp;
+}
+
+/*! Link Box Shadows */
+.pf2e-book:not(.callout, .admonition, .callout *, .admonition *) {
+  /*! styles for .pf2e-book that is not .callout or .admonition and their children */
+}
+.pf2e-book:not(.callout, .admonition, .callout *, .admonition *) .HyperMD-header .cm-header-1, .pf2e-book:not(.callout, .admonition, .callout *, .admonition *) h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: small-caps;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.pf2e-book:not(.callout, .admonition, .callout *, .admonition *) .HyperMD-header .cm-header-2, .pf2e-book:not(.callout, .admonition, .callout *, .admonition *) h2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: small-caps;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.pf2e-book:not(.callout, .admonition, .callout *, .admonition *) .HyperMD-header .cm-header-3, .pf2e-book:not(.callout, .admonition, .callout *, .admonition *) h3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.pf2e-book:not(.callout, .admonition, .callout *, .admonition *) .cm-line, .pf2e-book:not(.callout, .admonition, .callout *, .admonition *) p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 16px;
+  font-variant: small-caps;
+  font-weight: 400;
+  line-height: 24px;
+}
+.pf2e-book:not(.callout, .admonition, .callout *, .admonition *) blockquote {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 19px;
+  font-style: oblique;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.pf2e-book:not(.callout, .admonition, .callout *, .admonition *) pre {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+/*# sourceMappingURL=pf2e-book.css.map */

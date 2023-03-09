@@ -1,0 +1,176 @@
+
+.admonition {
+    --callout-border-opacity: 0.4;
+    border-radius: var(--radius-s);
+    font-family: var(--call-ffp);
+    font-size: var(--call-ftsp);
+    overflow-wrap: break-word;
+    overflow-x: auto;
+    overflow-y: scroll;
+    padding: var(--size-4-4);
+    position: relative;
+    // Stuff that can appear in every callout Child
+    & a {
+      color: var(--call-ftl-active);
+      opacity: unset;
+      padding: 1px
+    }
+
+    & a.is-unresolved {
+      color: var(--call-ftl-inactive);
+    }
+
+    & strong {
+      color: var(--call-ftb);
+    }
+
+    & em {
+      color: var(--call-fti);
+    }
+    
+    // Regular Callout Stuff
+    & .is-collapsible {
+      cursor: var(--cursor);
+      
+      & .callout-fold svg.lucide-chevron-down {
+        transform: scaleY(-1);
+      }
+    }
+    
+    & .callout-fold {
+      
+    }
+    
+    & .callout-title,
+    .admonition-title {
+      background-color: blue;
+      line-height: var(--call-line-height);
+      padding-top: 10px;
+      position: relative;
+
+      &:empty + .callout-content {
+        padding: var(--size-4-1) var(--size-4-3);
+      }
+
+      & .svg  {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    & .no-title {
+      font-size: 0;
+    }
+
+    & .callout-icon .svg-icon,
+    .admonition-title-icon  {
+      height: 25px;
+      width: 25px;
+      color: currentColor;
+      filter: invert(1) saturate(3);
+    }
+
+    & .callout-title-inner,
+    .admonition-title-content {
+      background-color: transparent;
+      font-size: var(--call-fts-h1);
+      font-weight: var(--call-f-title-weight);
+      & em {
+        font-weight: var(--call-f-title-weight);
+      }
+    }
+
+    & .edit-block-button:hover {
+      color: blue;
+      opacity: 100%;
+    }
+
+    & .callout-content,
+    .admonition-content {
+      display: inline;
+      background-color: blue;
+
+      & > :first-child {
+        margin-top: 0;
+      }
+
+      & > :last-child {
+        margin-bottom: 0;
+      }
+
+      & blockquote {
+        background-color: (blue, var(--callout-background-alpha)); /*! Needed for some Themes */
+      }
+
+      & h1 {
+        box-shadow: none; /*! Needed for some themes */
+        filter: none; /*! Needed for some themes */
+        font-size: var(--call-fts-h1);
+        font-weight: var(--call-f-title-weight);
+      }
+
+      & h2 {
+        color: var(--call-ft-h2);
+        box-shadow: none; /*! Needed for some themes */
+        filter: none; /*! Needed for some themes */
+        font-size: var(--call-fts-h2);
+        font-weight: var(--call-f-title-weight);
+      }
+
+      & h3 {
+        box-shadow: none; /*! Needed for some themes */
+        filter: none; /*! Needed for some themes */
+        font-family: var(--call-ff-title);
+        font-size: var(--call-fts-h3);
+        font-weight: var(--call-f-title-weight);
+        text-align: var(--call-f-title-align);
+
+        &:after,
+        .HyperMD-header-3::after {
+          display: none;
+        }
+
+        &:before {
+          display: none;
+        }
+      }
+
+      & code {
+        background-color: var(--pf2e-background-code-whitespace);
+        color: var(--pf2e-font-text-code);
+      }
+
+      & ul, ol {
+        padding: 0.25em;
+
+        &:is(.wotc) {
+          /*! ITS FIX */
+          padding-inline-start: 1.25em;
+        }
+
+        li {
+          color: var(--call-ftu);
+          font-size: 0.9rem;
+          padding-left: 0;
+          text-indent: 0;
+        }
+
+        ul > li::before {
+          display: none;
+        }
+
+        li::marker {
+          color: var(--call-ftu);
+        }
+      }
+
+      & .list-bullet:before {
+        display: none;
+      }
+
+      & .list-bullet:after {
+        display: none;
+      }
+
+    }
+  }

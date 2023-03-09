@@ -1,0 +1,17 @@
+@use '../../pf2e-variables';
+
+@mixin branch-notitle {
+  &:empty + .callout-content {
+    padding: var(--size-4-1) var(--size-4-3);
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+
+  & .no-title {
+    font-size: 0;
+
+    @at-root &:not(.admonition) {
+      display: none;
+    }
+  }
+}

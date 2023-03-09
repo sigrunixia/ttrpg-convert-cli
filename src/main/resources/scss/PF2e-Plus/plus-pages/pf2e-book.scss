@@ -1,0 +1,68 @@
+// Base
+@use '../../PF2e/pf2e-variables';
+@use '../pf2e-plus-variables';
+
+// Mixin Files
+
+
+// Specific Styling
+.pf2e-book:not(.callout, .admonition, .callout * , .admonition *) {
+
+  /*! styles for .pf2e-book that is not .callout or .admonition and their children */
+
+  & .HyperMD-header .cm-header-1, h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: small-caps;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  & .HyperMD-header .cm-header-2, h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-variant: small-caps;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+  
+  & .HyperMD-header .cm-header-3, h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  & .cm-line, p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 16px;
+    font-variant: small-caps;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  & blockquote {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 19px;
+    font-style: oblique;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  & pre {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    font-variant: small-caps;
+    font-weight: 700;
+    line-height: 24px;
+  }
+}
