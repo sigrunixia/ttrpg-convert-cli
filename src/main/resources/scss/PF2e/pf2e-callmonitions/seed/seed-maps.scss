@@ -1,0 +1,31 @@
+@use '../../pf2e-variables';
+//Maps
+$pf2e-callouts: (
+  pf2-beige: pf2e-variables.$pf2e-beige,
+  pf2-brown: pf2e-variables.$pf2e-brown,
+  pf2-example: pf2e-variables.$pf2e-example,
+  pf2-inset: pf2e-variables.$pf2e-inset,
+  pf2-key-box: pf2e-variables.$pf2e-key-box,
+  pf2-note: pf2e-variables.$pf2e-note,
+  pf2-paper: pf2e-variables.$pf2e-paper,
+  pf2-quote: pf2e-variables.$pf2e-quote,
+  pf2-red: pf2e-variables.$pf2e-red,
+  pf2-sidebar: pf2e-variables.$pf2e-sidebar,
+  pf2-tip: pf2e-variables.$pf2e-tip,
+  success-degree: pf2e-variables.$success-degree,
+);
+
+$pf2e-admonitions: (
+  embed-ability: pf2e-variables.$embed-ability,
+  embed-action: pf2e-variables.$embed-action,
+  embed-avatar: pf2e-variables.$embed-avatar,
+  embed-disease: pf2e-variables.$embed-disease,
+  embed-feat: pf2e-variables.$embed-feat,
+  embed-item: pf2e-variables.$embed-item,
+  embed-ritual: pf2e-variables.$embed-ritual,
+  inline-affliction: pf2e-variables.$inline-affliction,
+  inline-attack: pf2e-variables.$inline-attack,
+  // Note appears as both a callout and an admonition
+  pf2-note: pf2e-variables.$pf2e-note,
+  pf2-summary: pf2e-variables.$pf2e-summary,
+);

@@ -1,0 +1,5 @@
+// Prism
+body:is(.pt:not(.pt-disable-callout-styling)) .callout .callout-title {
+  border: none;
+  border-radius: 0;
+}

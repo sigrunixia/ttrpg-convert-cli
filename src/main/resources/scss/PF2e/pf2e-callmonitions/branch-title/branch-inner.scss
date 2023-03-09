@@ -1,0 +1,15 @@
+@use '../../pf2e-variables';
+
+@mixin branch-inner {
+
+  &:not(.callout-content) > .callout-title-inner {
+    font-size: pf2e-variables.$call-title-size;
+    font-weight: pf2e-variables.$call-f-title-weight;
+    padding-bottom: 0.125em;
+  }
+
+  em {
+    font-weight: pf2e-variables.$call-f-title-weight;
+  }
+
+}

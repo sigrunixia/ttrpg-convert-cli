@@ -1,0 +1,36 @@
+/*! 
+Legend
+
+Text:
+b = Bold 
+c = Color
+f = Font
+i = Italic
+l = Link
+p = Paragraph/Body/css p
+s = Size
+t = Text
+u = Underline
+-A = Alternative
+
+
+Callouts/Tables:
+call = Callout
+b = Border
+bg = Background
+T = Title
+-c = Column
+-r = Row
+H = Header
+-A = Alternative
+
+*/
+root {
+  --admonition-details-icon: $admon-detail;
+  --admonition-margin-bottom: $admon-m-B;
+  --admonition-margin-bottom-lp: $admon-m-B-lp;
+  --admonition-margin-top: $admon-m-t;
+  --admonition-margin-top-lp: $admon-m-t-lp;
+}
+
+/*# sourceMappingURL=branch-title.css.map */

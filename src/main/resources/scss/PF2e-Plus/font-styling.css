@@ -1,0 +1,83 @@
+span.cm-list-1.cm-strong,
+.cm-strong,
+b,
+strong {
+  color: var(--pf2e-font-bold-bright);
+  font-weight: 700;
+}
+
+.cm-em,
+i, em {
+  font-style: italic;
+  font-weight: 400;
+}
+.cm-em:is(.theme-dark),
+i:is(.theme-dark), em:is(.theme-dark) {
+  color: rgb(0, 196, 0);
+}
+.cm-em:not(.pf2-trait),
+i:not(.pf2-trait), em:not(.pf2-trait) {
+  color: var(--pf2e-font-italic-green);
+}
+.cm-em:not(.pf2-trait):has(.h1),
+i:not(.pf2-trait):has(.h1), em:not(.pf2-trait):has(.h1) {
+  font-weight: 700;
+}
+.cm-em:not(.pf2-trait):is(.pf2-trait),
+i:not(.pf2-trait):is(.pf2-trait), em:not(.pf2-trait):is(.pf2-trait) {
+  color: var(--pf2e-font-italic-green-trait);
+}
+.cm-em .cm-em,
+.cm-em i, .cm-em em:is(.pf2-trait),
+i .cm-em,
+i i,
+i em:is(.pf2-trait), em .cm-em,
+em i, em em:is(.pf2-trait) {
+  color: var(--pf2e-font-italic-green-trait);
+  font-style: italic;
+  font-weight: 400;
+}
+.cm-em .cm-em:has(.h1),
+.cm-em i:has(.h1), .cm-em em:is(.pf2-trait):has(.h1),
+i .cm-em:has(.h1),
+i i:has(.h1),
+i em:is(.pf2-trait):has(.h1), em .cm-em:has(.h1),
+em i:has(.h1), em em:is(.pf2-trait):has(.h1) {
+  font-weight: 700;
+}
+
+.markdown-rendered .list-bullet {
+  display: none;
+}
+
+.markdown-rendered ul.has-list-bullet {
+  font-variant-caps: titling-caps;
+  list-style-type: inherit;
+}
+.markdown-rendered ul.has-list-bullet > li::marker:is(.callout, .admonition) {
+  color: var(--callout-content-background);
+  filter: invert(100%);
+}
+
+.markdown-rendered ul.has-list-bullet > li::marker {
+  color: currentColor;
+  filter: invert(100%);
+}
+
+.markdown-preview-view ol:is(.callout, .admonition),
+.markdown-preview-view ul:is(.callout, .admonition) {
+  margin-block-end: inherit;
+  margin-block-start: inherit;
+}
+
+.markdown-source-view ol > li:is(.callout, .admonition),
+.markdown-source-view ul > li:is(.callout, .admonition),
+.markdown-preview-view ol > li:is(.callout, .admonition),
+.markdown-preview-view ul > li:is(.callout, .admonition),
+.mod-cm6 .HyperMD-list-line.cm-line:is(.callout, .admonition) {
+  margin-block-end: inherit;
+  margin-block-start: inherit;
+  padding: inherit;
+}
+
+/*# sourceMappingURL=font-styling.css.map */

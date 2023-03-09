@@ -1,0 +1,50 @@
+code {
+  background-color: var(--pf2e-background-code-whitespace);
+  color: var(--pf2e-font-text-code);
+  font-family: var(--pf2e-font-family-code);
+  font-weight: 600;
+}
+
+.markdown-rendered pre {
+  overflow-x: auto;
+}
+.markdown-rendered pre code {
+  overflow-x: scroll;
+}
+.markdown-rendered pre code::-webkit-scrollbar {
+  display: none;
+}
+
+.markdown-rendered code {
+  background-color: var(--pf2e-background-code-whitespace);
+  border-radius: var(--radius-s);
+  color: var(--pf2e-font-text-code);
+  font-family: var(--pf2e-font-family-code);
+  font-size: var(--pf2e-font-text-size-code);
+  font-weight: 600;
+  padding: 0.1em 0.25em;
+}
+
+.markdown-rendered pre[class*=language-] {
+  white-space: pre;
+}
+.markdown-rendered pre[class*=language-] code {
+  overflow-x: scroll;
+  white-space: pre;
+}
+.markdown-rendered pre[class*=language-] code::-webkit-scrollbar {
+  display: none;
+}
+
+.cm-s-obsidian span.cm-inline-code,
+.cm-math {
+  background-color: var(--pf2e-background-code-whitespace);
+  color: var(--pf2e-font-text-code);
+  font-weight: 600;
+}
+
+.cm-line.HyperMD-list-line {
+  tab-size: var(--list-indent);
+}
+
+/*# sourceMappingURL=code.css.map */

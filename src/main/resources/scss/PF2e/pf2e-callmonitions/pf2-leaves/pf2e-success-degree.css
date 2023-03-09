@@ -1,0 +1,18 @@
+.callout[data-callout=success-degree] .callout-title {
+  display: none;
+}
+.callout[data-callout=success-degree] .callout-title-inner {
+  display: none;
+}
+.callout[data-callout=success-degree] .callout-content ul {
+  list-style-type: disclosure-open;
+  padding-inline-start: 16px;
+}
+.callout[data-callout=success-degree] .callout-content li {
+  line-height: 1;
+}
+.callout[data-callout=success-degree] .callout-content li::before {
+  display: none; /*! Needed for ITS Theme */
+}
+
+/*# sourceMappingURL=pf2e-success-degree.css.map */

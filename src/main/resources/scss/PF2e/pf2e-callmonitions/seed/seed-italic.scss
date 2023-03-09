@@ -1,0 +1,8 @@
+@use '../../pf2e-variables';
+
+// Mixin for Italic coloration
+@mixin seed-italic {
+  em {
+    color: pf2e-variables.$call-fti;
+  }
+}

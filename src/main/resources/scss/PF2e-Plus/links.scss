@@ -1,0 +1,128 @@
+@use 'pf2e-plus-variables';
+// Begin Styling
+
+/* Link Coloration and Hover */
+a {
+  color: var(--pf2e-font-active-link-blue);
+  font-weight: 700;
+}
+
+.markdown-preview-view {
+  .internal-link.is-unresolved {
+    color: pf2e-plus-variables.$pf2e-ftl-unresolved;
+    opacity: 1;
+
+    &:hover {
+      color: var(--pf2e-font-unresolved-hover-link);
+      vertical-align: baseline;
+    }
+  }
+}
+
+/* Removes Text Decoration Underline */
+a:not(.tag),
+.internal-link,
+.external-link,
+.cm-link,
+.cm-hmd-internal-link,
+.markdown-rendered {
+  &.internal-link,
+  &.external-link {
+    text-decoration: none;
+  }
+
+  &.tag:hover,
+  a:hover {
+    background-color: rgba(var(--pf2e-font-active-link-blue), 0.3);
+    color: var(--pf2e-font-active-link-blue);
+
+    &.is-unresolved {
+      background-color: hsla(hue(pf2e-plus-variables.$pf2e-ftl-unresolved), saturation(pf2e-plus-variables.$pf2e-ftl-unresolved), lightness(pf2e-plus-variables.$pf2e-ftl-unresolved), 0.3);
+      border: var(--tag-border-width) solid var(--tag-border-color-hover);
+      color: pf2e-plus-variables.$pf2e-ftl-unresolved;
+    }
+  }
+}
+
+.cm-s-obsidian {
+  span.cm-link,
+  span.cm-url,
+  span.cm-formatting-link.cm-url {
+    color: pf2e-plus-variables.$pf2e-ftl-unresolved;
+    word-break: break-word;
+  }
+
+  .cm-hashtag {
+    color: pf2e-plus-variables.$pf2e-ftl-unresolved;
+  }
+}
+
+
+// Box Shadow Styling
+
+:is([href='/rules/']) {
+  word-break: keep-all;
+  text-align: left;
+  text-indent: 0;
+  padding: 2px;
+  cursor: help;
+}
+
+:is([href$='#Actions']):is(.internal-link) {
+  cursor: context-menu;
+  display: inline-block;
+  font-size: inherit;
+  height: clamp(18px, 4vw, 26px);
+  text-decoration-line: none;
+  vertical-align: bottom;
+  width: clamp(18px, 4vw, 26px);
+}
+
+div.cm-line:has(a[href='/rules/traits/Uncommon.md']) {
+    box-shadow: 0 0 50px 50px pf2e-plus-variables.$box-shadow-uncommon inset !important;
+    color: whitesmoke !important;
+    padding: 2px;
+    text-align: left;
+    text-indent: 0;
+  }
+
+
+.internal-link {
+  &:is([href^='/rules/traits/']:not([href='/rules/traits/Uncommon.md'])) {
+    box-shadow: 0 0 50px 50px hsl(0, 79%, 19%) inset;
+    color: whitesmoke !important;
+    padding: 2px;
+  }
+}
+  
+//Condition Links, Makes them Green!
+.internal-link {
+  &:is([href*='/rules/conditions.md']) {
+    box-shadow: 0 0 50px 50px var(--box-shadow-condition) inset;
+    color: whitesmoke !important;
+    padding: 2px;
+    text-align: left;
+    text-indent: 0;
+    word-break: keep-all;
+    
+    &:has(.cm-link) {
+      &::after {
+        content: "";
+
+      }
+    }
+  }
+}
+
+// Skill Links
+.internal-link {
+  &:is([href*='/compendium/skills.md']) {
+    box-shadow: 0 0 50px 50px var(--box-shadow-skills) inset;
+    color: midnightblue !important;
+    cursor: help;
+    padding: 2px;
+    text-align: left;
+    text-indent: 0;
+    word-break: keep-all;
+    }
+  }

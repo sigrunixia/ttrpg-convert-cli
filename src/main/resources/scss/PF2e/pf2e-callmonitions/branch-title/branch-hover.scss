@@ -1,0 +1,9 @@
+@use '../../pf2e-variables';
+
+@mixin title-hover {
+
+  &:hover {
+    opacity: 0.2;
+  }
+  
+}

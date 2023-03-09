@@ -1,0 +1,115 @@
+.theme-light {
+  /*! Statblocks - 5e */
+  --dnd5e-statblock-callout-background: hsl(0, 79%, 85%);
+  --dnd5e-statblock-section-line: hsl(330, 5%, 30%);
+}
+
+.theme-dark {
+  /*! Statblocks - 5e */
+  --dnd5e-statblock-callout-background: hsl(0, 79%, 75%);
+  --dnd5e-statblock-section-line: hsl(330, 5%, 20%);
+}
+
+:root {
+  --admonition-details-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='10 15 15 20 20 15'%3E%3C/polyline%3E%3Cpath d='M4 4h7a4 4 0 0 1 4 4v12'%3E%3C/path%3E%3C/svg%3E");
+  --admonition-margin-bottom: var(--admonition-margin-top);
+  --admonition-margin-bottom-lp: 0;
+  --admonition-margin-top: 1.25em;
+  --admonition-margin-top-lp: 0;
+}
+
+/*! Monster: statblocks and #token images */
+.rendered-widget .admonition-statblock-parent,
+.markdown-rendered .admonition-statblock-parent,
+.markdown-preview-section .admonition-statblock-parent {
+  clear: both;
+}
+.rendered-widget .callout[data-callout*=statblock],
+.markdown-rendered .callout[data-callout*=statblock],
+.markdown-preview-section .callout[data-callout*=statblock] {
+  --callout-color: var(--dnd5e-statblock-section-line-alt);
+  --callout-border-width: 0 0 0 0.08rem;
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-title,
+.markdown-rendered .callout[data-callout*=statblock] .callout-title,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-title {
+  line-height: var(--line-height);
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-title .callout-title-inner,
+.markdown-rendered .callout[data-callout*=statblock] .callout-title .callout-title-inner,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-title .callout-title-inner {
+  font-size: var(--h3-size);
+  flex: 2;
+}
+.rendered-widget .callout[data-callout*=statblock] img[src$="#token"],
+.rendered-widget .callout[data-callout*=statblock] div[src$="#token"],
+.markdown-rendered .callout[data-callout*=statblock] img[src$="#token"],
+.markdown-rendered .callout[data-callout*=statblock] div[src$="#token"],
+.markdown-preview-section .callout[data-callout*=statblock] img[src$="#token"],
+.markdown-preview-section .callout[data-callout*=statblock] div[src$="#token"] {
+  float: right;
+  margin-left: 5px;
+  width: 150px;
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-content,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content {
+  background-color: var(--background-primary);
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-content > :first-child,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content > :first-child,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content > :first-child {
+  margin-top: 0.5em;
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-content > :last-child,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content > :last-child,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content > :last-child {
+  margin-bottom: 0.5em;
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-content h1,
+.rendered-widget .callout[data-callout*=statblock] .callout-content h2,
+.rendered-widget .callout[data-callout*=statblock] .callout-content h3,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content h1,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content h2,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content h3,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content h1,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content h2,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content h3 {
+  font-family: var(--default-font);
+  font-variant: common-ligatures small-caps;
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-content h1,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content h1,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content h1 {
+  font-size: 1.4em;
+  line-height: 1.4em;
+  margin: 0;
+  padding: 0;
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-content h2,
+.rendered-widget .callout[data-callout*=statblock] .callout-content h3,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content h2,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content h3,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content h2,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content h3 {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  padding: 0.5em 0 0 0;
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+  border-bottom: 1px solid rgb(var(--dnd5e-statblock-section-line-alt));
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-content p,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content p,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content p {
+  line-height: 1.2em;
+  margin-block-start: 0.5em;
+}
+.rendered-widget .callout[data-callout*=statblock] .callout-content li,
+.markdown-rendered .callout[data-callout*=statblock] .callout-content li,
+.markdown-preview-section .callout[data-callout*=statblock] .callout-content li {
+  line-height: 1.2em;
+  margin-block-start: 0.5em;
+}
+
+/*# sourceMappingURL=dnd5e-callout-defaults.css.map */

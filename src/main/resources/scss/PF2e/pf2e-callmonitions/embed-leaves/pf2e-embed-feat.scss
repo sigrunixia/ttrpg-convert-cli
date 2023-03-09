@@ -1,0 +1,16 @@
+.callout[data-callout='embed-feat'] {
+  
+  & .callout-title {
+
+  }
+
+  & .callout-title-inner {
+
+  }
+
+  & .callout-content {
+
+    &:has([data-callout='embed-ability']) {
+    }
+  }
+}

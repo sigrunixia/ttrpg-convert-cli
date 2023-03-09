@@ -1,0 +1,27 @@
+// Variables
+@use '../../pf2e-variables';
+//Maps
+@use '../seed/seed-maps' as admonition-map;
+
+//Time to color this Seed
+@each $key, $value in admonition-map.$pf2e-admonitions {
+  .admonition[data-callout='#{$key}'] {
+    --callout-color: #{$value};
+    --callout-content-background: #{$value};
+    background-color: #{$value};
+    box-shadow: 0 0.2rem 0.5rem #{pf2e-variables.$call-box-shadow};
+
+    & .admonition-title {
+      background-color: #{$value};
+    }
+
+    & .admonition-content {
+      background-color: #{$value};
+
+      & blockquote {
+        background-color: (#{$value}, var(--callout-background-alpha));
+      }
+      
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.callout[data-callout=pf2-tip],
+.admonitions[data-callout=pf2-tip] {
+  & .callout-title {
+    background: var(--pf2e-tip-bg-title);
+  }
+
+  & .callout-title-inner {
+    color: var(--call-f-title-tip);
+  }
+}

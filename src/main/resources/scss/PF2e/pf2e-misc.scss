@@ -1,0 +1,37 @@
+sub {
+  bottom: -0.25em;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  text-align: center;
+  top: -0.5em;
+  vertical-align: baseline;
+}
+
+// For those who want to print... 
+@media print {
+  h1:after, h3:after, h2:after, h4:after, h5:after, h6:after{
+    content: "";
+    display: block;
+    height: 100px;
+    margin-bottom: -100px;
+  }
+  hr {
+    break-after:page;
+    visibility: hidden;
+  }
+}
+
+.markdown-preview-view.readable .markdown-preview-sizer {
+  max-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}

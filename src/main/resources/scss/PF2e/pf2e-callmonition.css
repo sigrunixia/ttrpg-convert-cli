@@ -1,0 +1,578 @@
+/*! 
+Legend
+
+Text:
+b = Bold 
+c = Color
+f = Font
+i = Italic
+l = Link
+p = Paragraph/Body/css p
+s = Size
+t = Text
+u = Underline
+-A = Alternative
+
+
+Callouts/Tables:
+call = Callout
+b = Border
+bg = Background
+T = Title
+-c = Column
+-r = Row
+H = Header
+-A = Alternative
+
+*/
+root {
+  --admonition-details-icon: $admon-detail;
+  --admonition-margin-bottom: $admon-m-B;
+  --admonition-margin-bottom-lp: $admon-m-B-lp;
+  --admonition-margin-top: $admon-m-t;
+  --admonition-margin-top-lp: $admon-m-t-lp;
+}
+
+.pf2e .callout {
+  --callout-background-alpha: 20%;
+  --callout-padding: 0.125em;
+  --callout-radius: 0.125em;
+  font-family: Frutiger, "Helvetica Neue", Helvetica, Arial, Pathfinder, sans-serif;
+  font-size: clamp(14px, 1.0625em, 18px);
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  padding: 0.8125em;
+  position: relative;
+}
+.pf2e .callout .internal-link {
+  color: #273649;
+  font-weight: bold;
+  opacity: unset;
+  padding: 0.0625em;
+  text-decoration-line: inherit;
+}
+.pf2e .callout .internal-link.is-unresolved {
+  color: #3c78b9;
+  font-style: italic;
+}
+.pf2e .callout strong {
+  color: #293232;
+  padding-inline: 0;
+}
+.pf2e .callout em {
+  color: #032900;
+}
+.pf2e .callout:not(.admonition).drop-shadow {
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.pf2e .admonition {
+  --callout-background-alpha: 20%;
+  --callout-padding: 0.125em;
+  --callout-radius: 0.125em;
+  font-family: Frutiger, "Helvetica Neue", Helvetica, Arial, Pathfinder, sans-serif;
+  font-size: clamp(14px, 1.0625em, 18px);
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  padding: 0.8125em;
+  position: relative;
+}
+.pf2e .admonition .internal-link {
+  color: #273649;
+  font-weight: bold;
+  opacity: unset;
+  padding: 0.0625em;
+  text-decoration-line: inherit;
+}
+.pf2e .admonition .internal-link.is-unresolved {
+  color: #3c78b9;
+  font-style: italic;
+}
+.pf2e .admonition strong {
+  color: #293232;
+  padding-inline: 0;
+}
+.pf2e .admonition em {
+  color: #032900;
+}
+
+.pf2e .callout .callout-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .callout .callout-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .callout .callout-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .callout .callout-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .callout .callout-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .callout .callout-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .callout .callout-content h3::before {
+  display: none;
+}
+.pf2e .callout .callout-content h3::after,
+.pf2e .callout .callout-content h3 .HyperMD-header-3::after {
+  display: none;
+}
+.pf2e .callout .callout-content:hover {
+  opacity: 0.2;
+}
+.pf2e .callout .callout-content ul, .pf2e .callout .callout-content ol {
+  padding: 0;
+}
+.pf2e .callout .callout-content ul li:nth-child(n) strong:not(:only-child):after, .pf2e .callout .callout-content ol li:nth-child(n) strong:not(:only-child):after {
+  content: ":";
+}
+.pf2e .callout .callout-content ul li::marker, .pf2e .callout .callout-content ol li::marker {
+  color: #322f2f;
+}
+.pf2e .admonition .admonition-content {
+  color: #a0bfcf;
+  cursor: pointer;
+  opacity: 0;
+  position: relative;
+  margin: 0.375rem;
+  right: 0;
+  top: 0;
+  transition: 1s opacity ease-in-out;
+}
+.pf2e .admonition .admonition-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .admonition .admonition-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .admonition .admonition-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .admonition .admonition-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .admonition .admonition-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .admonition .admonition-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .admonition .admonition-content h3::before {
+  display: none;
+}
+.pf2e .admonition .admonition-content h3::after,
+.pf2e .admonition .admonition-content h3 .HyperMD-header-3::after {
+  display: none;
+}
+.pf2e .admonition .admonition-content:hover {
+  opacity: 0.2;
+}
+.pf2e .admonition .admonition-content ul, .pf2e .admonition .admonition-content ol {
+  padding: 0;
+}
+.pf2e .admonition .admonition-content ul li:nth-child(n) strong:not(:only-child):after, .pf2e .admonition .admonition-content ol li:nth-child(n) strong:not(:only-child):after {
+  content: ":";
+}
+.pf2e .admonition .admonition-content ul li::marker, .pf2e .admonition .admonition-content ol li::marker {
+  color: #322f2f;
+}
+.pf2e .admonition .admonition-content:hover {
+  color: white;
+}
+
+.callout[data-callout=pf2-note] {
+  border: none;
+  clear: both;
+  font-style: italic;
+}
+.callout[data-callout=pf2-note] .callout-title-inner {
+  font-size: var(--call-fts-h5);
+}
+.callout[data-callout=pf2-note] .callout-title-inner .no-title {
+  font-size: 0;
+}
+
+.callout[data-callout=pf2-example] {
+  --callout-border-opacity: 0.3;
+  --callout-icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="white"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M32 32C32 14.3 46.3 0 64 0S96 14.3 96 32V240H32V32zM224 192c0-17.7 14.3-32 32-32s32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V192zm-64-64c17.7 0 32 14.3 32 32v48c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm160 96c0-17.7 14.3-32 32-32s32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V224zm-96 88l0-.6c9.4 5.4 20.3 8.6 32 8.6c13.2 0 25.4-4 35.6-10.8c8.7 24.9 32.5 42.8 60.4 42.8c11.7 0 22.6-3.1 32-8.6V352c0 88.4-71.6 160-160 160H162.3c-42.4 0-83.1-16.9-113.1-46.9L37.5 453.5C13.5 429.5 0 396.9 0 363V336c0-35.3 28.7-64 64-64h88c22.1 0 40 17.9 40 40s-17.9 40-40 40H96c-8.8 0-16 7.2-16 16s7.2 16 16 16h56c39.8 0 72-32.2 72-72z"/></svg>';
+}
+.callout[data-callout=pf2-example] .callout-title {
+  display: flex;
+}
+.callout[data-callout=pf2-example] .callout-title-inner {
+  flex: 2;
+}
+.callout[data-callout=pf2-example] .callout-icon .svg-icon,
+.callout[data-callout=pf2-example] .callout-icon {
+  display: flow-root;
+}
+.callout[data-callout=pf2-example] td:hover {
+  color: purple;
+}
+
+.callout[data-callout=pf2-key-box] {
+  --callout-border-opacity: 0.3;
+}
+
+.callout[data-callout=pf2-beige] {
+  --callout-color: #edd7ab;
+  --callout-content-background: #edd7ab;
+  background-color: #edd7ab;
+  border-color: hsla(40, 65%, 80%, 0.25);
+}
+.callout[data-callout=pf2-beige] .callout-title {
+  background-color: #edd7ab;
+}
+.callout[data-callout=pf2-beige] .callout-title .callout-title-inner {
+  background-color: #edd7ab;
+}
+.callout[data-callout=pf2-beige] .callout-content {
+  background-color: #edd7ab;
+}
+.callout[data-callout=pf2-beige] .callout-content blockquote {
+  background-color: #edd7ab, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-brown] {
+  --callout-color: #d4ccc4;
+  --callout-content-background: #d4ccc4;
+  background-color: #d4ccc4;
+  border-color: hsla(30, 15%, 80%, 0.25);
+}
+.callout[data-callout=pf2-brown] .callout-title {
+  background-color: #d4ccc4;
+}
+.callout[data-callout=pf2-brown] .callout-title .callout-title-inner {
+  background-color: #d4ccc4;
+}
+.callout[data-callout=pf2-brown] .callout-content {
+  background-color: #d4ccc4;
+}
+.callout[data-callout=pf2-brown] .callout-content blockquote {
+  background-color: #d4ccc4, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-example] {
+  --callout-color: #bdfa9e;
+  --callout-content-background: #bdfa9e;
+  background-color: #bdfa9e;
+  border-color: hsla(100, 90%, 80%, 0.25);
+}
+.callout[data-callout=pf2-example] .callout-title {
+  background-color: #bdfa9e;
+}
+.callout[data-callout=pf2-example] .callout-title .callout-title-inner {
+  background-color: #bdfa9e;
+}
+.callout[data-callout=pf2-example] .callout-content {
+  background-color: #bdfa9e;
+}
+.callout[data-callout=pf2-example] .callout-content blockquote {
+  background-color: #bdfa9e, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-inset] {
+  --callout-color: #e0c9b8;
+  --callout-content-background: #e0c9b8;
+  background-color: #e0c9b8;
+  border-color: hsla(25, 40%, 80%, 0.25);
+}
+.callout[data-callout=pf2-inset] .callout-title {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-inset] .callout-title .callout-title-inner {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-inset] .callout-content {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-inset] .callout-content blockquote {
+  background-color: #e0c9b8, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-key-box] {
+  --callout-color: #bef4e2;
+  --callout-content-background: #bef4e2;
+  background-color: #bef4e2;
+  border-color: hsla(160, 70%, 85%, 0.25);
+}
+.callout[data-callout=pf2-key-box] .callout-title {
+  background-color: #bef4e2;
+}
+.callout[data-callout=pf2-key-box] .callout-title .callout-title-inner {
+  background-color: #bef4e2;
+}
+.callout[data-callout=pf2-key-box] .callout-content {
+  background-color: #bef4e2;
+}
+.callout[data-callout=pf2-key-box] .callout-content blockquote {
+  background-color: #bef4e2, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-note] {
+  --callout-color: #c7d1c9;
+  --callout-content-background: #c7d1c9;
+  background-color: #c7d1c9;
+  border-color: hsla(130, 10%, 80%, 0.25);
+}
+.callout[data-callout=pf2-note] .callout-title {
+  background-color: #c7d1c9;
+}
+.callout[data-callout=pf2-note] .callout-title .callout-title-inner {
+  background-color: #c7d1c9;
+}
+.callout[data-callout=pf2-note] .callout-content {
+  background-color: #c7d1c9;
+}
+.callout[data-callout=pf2-note] .callout-content blockquote {
+  background-color: #c7d1c9, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-paper] {
+  --callout-color: #ded8ba;
+  --callout-content-background: #ded8ba;
+  background-color: #ded8ba;
+  border-color: hsla(50, 35%, 80%, 0.25);
+}
+.callout[data-callout=pf2-paper] .callout-title {
+  background-color: #ded8ba;
+}
+.callout[data-callout=pf2-paper] .callout-title .callout-title-inner {
+  background-color: #ded8ba;
+}
+.callout[data-callout=pf2-paper] .callout-content {
+  background-color: #ded8ba;
+}
+.callout[data-callout=pf2-paper] .callout-content blockquote {
+  background-color: #ded8ba, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-quote] {
+  --callout-color: #e0c2f0;
+  --callout-content-background: #e0c2f0;
+  background-color: #e0c2f0;
+  border-color: hsla(280, 60%, 85%, 0.25);
+}
+.callout[data-callout=pf2-quote] .callout-title {
+  background-color: #e0c2f0;
+}
+.callout[data-callout=pf2-quote] .callout-title .callout-title-inner {
+  background-color: #e0c2f0;
+}
+.callout[data-callout=pf2-quote] .callout-content {
+  background-color: #e0c2f0;
+}
+.callout[data-callout=pf2-quote] .callout-content blockquote {
+  background-color: #e0c2f0, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-red] {
+  --callout-color: #f0aea8;
+  --callout-content-background: #f0aea8;
+  background-color: #f0aea8;
+  border-color: hsla(5, 70%, 80%, 0.25);
+}
+.callout[data-callout=pf2-red] .callout-title {
+  background-color: #f0aea8;
+}
+.callout[data-callout=pf2-red] .callout-title .callout-title-inner {
+  background-color: #f0aea8;
+}
+.callout[data-callout=pf2-red] .callout-content {
+  background-color: #f0aea8;
+}
+.callout[data-callout=pf2-red] .callout-content blockquote {
+  background-color: #f0aea8, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-sidebar] {
+  --callout-color: #e0c9b8;
+  --callout-content-background: #e0c9b8;
+  background-color: #e0c9b8;
+  border-color: hsla(25, 40%, 80%, 0.25);
+}
+.callout[data-callout=pf2-sidebar] .callout-title {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-sidebar] .callout-title .callout-title-inner {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-sidebar] .callout-content {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-sidebar] .callout-content blockquote {
+  background-color: #e0c9b8, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-tip] {
+  --callout-color: #c6ecec;
+  --callout-content-background: #c6ecec;
+  background-color: #c6ecec;
+  border-color: hsla(180, 50%, 85%, 0.25);
+}
+.callout[data-callout=pf2-tip] .callout-title {
+  background-color: #c6ecec;
+}
+.callout[data-callout=pf2-tip] .callout-title .callout-title-inner {
+  background-color: #c6ecec;
+}
+.callout[data-callout=pf2-tip] .callout-content {
+  background-color: #c6ecec;
+}
+.callout[data-callout=pf2-tip] .callout-content blockquote {
+  background-color: #c6ecec, var(--callout-background-alpha);
+}
+
+.callout[data-callout=success-degree] {
+  --callout-color: #c4b3e6;
+  --callout-content-background: #c4b3e6;
+  background-color: #c4b3e6;
+  border-color: hsla(260, 50%, 80%, 0.25);
+}
+.callout[data-callout=success-degree] .callout-title {
+  background-color: #c4b3e6;
+}
+.callout[data-callout=success-degree] .callout-title .callout-title-inner {
+  background-color: #c4b3e6;
+}
+.callout[data-callout=success-degree] .callout-content {
+  background-color: #c4b3e6;
+}
+.callout[data-callout=success-degree] .callout-content blockquote {
+  background-color: #c4b3e6, var(--callout-background-alpha);
+}
+
+.callout[data-callout=success-degree] .callout-title {
+  display: none;
+}
+.callout[data-callout=success-degree] .callout-title-inner {
+  display: none;
+}
+.callout[data-callout=success-degree] .callout-content ul {
+  list-style-type: disclosure-open;
+  padding-inline-start: 16px;
+}
+.callout[data-callout=success-degree] .callout-content li {
+  line-height: 1;
+}
+.callout[data-callout=success-degree] .callout-content li::before {
+  display: none; /*! Needed for ITS Theme */
+}
+
+body:is(.pt:not(.pt-disable-callout-styling)) .callout .callout-title {
+  border: none;
+  border-radius: 0;
+}
+
+/*# sourceMappingURL=pf2e-callmonition.css.map */

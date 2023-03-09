@@ -1,0 +1,13 @@
+.callout[data-callout=pf2-note] {
+  border: none;
+  clear: both;
+  font-style: italic;
+}
+.callout[data-callout=pf2-note] .callout-title-inner {
+  font-size: var(--call-fts-h5);
+}
+.callout[data-callout=pf2-note] .callout-title-inner .no-title {
+  font-size: 0;
+}
+
+/*# sourceMappingURL=pf2-note.css.map */
