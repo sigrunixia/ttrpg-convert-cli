@@ -30,19 +30,19 @@
     <properties>
         <revision>199-SNAPSHOT</revision>
         <!-- Build -->
-        <compiler-plugin.version>3.10.1</compiler-plugin.version>
+        <compiler-plugin.version>3.11.0</compiler-plugin.version>
         <maven.compiler.release>11</maven.compiler.release>
         <formatter-plugin.version>2.22.0</formatter-plugin.version>
         <impsort-plugin.version>1.8.0</impsort-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <surefire-plugin.version>3.0.0-M8</surefire-plugin.version>
+        <surefire-plugin.version>3.0.0-M9</surefire-plugin.version>
         <skipTests>false</skipTests>
         <skipITs>true</skipITs>
         <!-- Quarkus -->
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>2.16.2.Final</quarkus.platform.version>
+        <quarkus.platform.version>2.16.4.Final</quarkus.platform.version>
         <!-- Libraries -->
         <assertj.version>3.24.2</assertj.version>
         <github-slugify.version>3.0.2</github-slugify.version>
