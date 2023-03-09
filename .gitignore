@@ -5,6 +5,7 @@ excludes.json
 publish
 compendium
 artifacts
+/TTRPG/
 
 #Maven
 target/
@@ -59,4 +60,3 @@ jreleaser-cli.jar
 native-image-Linux-logs
 native-image-Windows-logs
 native-image-macOS-logs
-The-Black-Wyrmguards.md
