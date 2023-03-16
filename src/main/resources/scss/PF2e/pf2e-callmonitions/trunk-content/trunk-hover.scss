@@ -1,8 +1,0 @@
-@use '../../pf2e-variables';
-
-@mixin content-hover {
-  
-  &:hover {
-    opacity: 0.2;
-  }
-}

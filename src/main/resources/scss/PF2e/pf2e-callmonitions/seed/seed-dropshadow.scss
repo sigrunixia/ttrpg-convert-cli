@@ -1,9 +1,0 @@
-@use '../../pf2e-variables';
-
-@mixin seed-dropshadow {
-
-  &:not(.admonition).drop-shadow {
-    box-shadow: 0 .2rem .5rem pf2e-variables.$call-box-shadow;
-}
-
-}
