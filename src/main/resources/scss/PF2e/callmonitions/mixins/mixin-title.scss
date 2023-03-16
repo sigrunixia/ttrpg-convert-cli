@@ -1,5 +1,5 @@
 // Variables
-@use "../../pf2e-variables" as var;
+@use "../pf2e-callmonition-variables" as call-var;
 
 
 // .callmonition {
@@ -8,9 +8,9 @@
 @mixin ca-title {
   border: none;
   display: flex;
-  font-family: var.$call-ff-title;
-  font-size: var.$call-fts-h1;
-  line-height: var.$call-line-height;
+  font-family: call-var.$call-ff-title;
+  font-size: call-var.$call-fts-h1;
+  line-height: call-var.$call-line-height;
   min-height: 1.5rem;
   padding-top: 10px;
   position: relative;
@@ -64,13 +64,13 @@
   justify-self: center;
 
   &:not(.callout-content) > .callout-title-inner {
-    font-size: var.$call-title-size;
-    font-weight: var.$call-f-title-weight;
+    font-size: call-var.$call-title-size;
+    font-weight: call-var.$call-f-title-weight;
     padding-bottom: 0.125em;
   }
 
   em {
-    font-weight: var.$call-f-title-weight;
+    font-weight: call-var.$call-f-title-weight;
   }
 }
 
@@ -113,13 +113,13 @@
   justify-self: center;
 
   &:not(.admonition-content) > .admonition-title-content {
-    font-size: var.$call-title-size;
-    font-weight: var.$call-f-title-weight;
+    font-size: call-var.$call-title-size;
+    font-weight: call-var.$call-f-title-weight;
     padding-bottom: 0.125em;
   }
 
   em {
-    font-weight: var.$call-f-title-weight;
+    font-weight: call-var.$call-f-title-weight;
   }
 
 }

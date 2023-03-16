@@ -1,5 +1,5 @@
 // Variables
-@use "../../pf2e-variables" as var;
+@use "../pf2e-callmonition-variables" as call-var;
 //Maps
 @use "seed-maps" as callout-map;
 
@@ -9,7 +9,7 @@
     --callout-color: #{$value};
     --callout-content-background: #{$value};
     background-color: #{$value};
-    border-color: hsla(hue($value), saturation($value), lightness($value), var.$callout-border-opacity);
+    border-color: hsla(hue($value), saturation($value), lightness($value), call-var.$callout-border-opacity);
 
     & .callout-title {
       background-color: #{$value};

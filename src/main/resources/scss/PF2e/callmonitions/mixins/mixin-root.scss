@@ -1,5 +1,5 @@
 // Variables
-@use "../../pf2e-variables" as var;
+@use "../pf2e-callmonition-variables" as call-var;
 
 // .callmonition {
 // The Basics
@@ -8,8 +8,8 @@
   --callout-padding: 0.125em;
   --callout-radius: 0.125em;
 
-  font-family: var.$call-ffp;
-  font-size: var.$call-ftsp;
+  font-family: call-var.$call-ffp;
+  font-size: call-var.$call-ftsp;
   overflow-wrap: break-word;
   overflow-y: scroll;
   padding: 0.8125em;
@@ -19,7 +19,7 @@
 // Internal Links Only
 @mixin ca-link {
   & .internal-link {
-    color: var.$call-ftl-active;
+    color: call-var.$call-ftl-active;
     font-weight: bold;
     opacity: unset;
     padding: 0.0625em;
@@ -27,7 +27,7 @@
   }
 
   & .internal-link.is-unresolved {
-    color: var.$call-ftl-inactive;
+    color: call-var.$call-ftl-inactive;
     font-style: italic;
   }
 }
@@ -35,7 +35,7 @@
 // Mixin to add Strong Coloration
 @mixin ca-strong {
   & strong {
-    color: var.$call-ftb;
+    color: call-var.$call-ftb;
     padding-inline: 0;
   }
 }
@@ -43,7 +43,7 @@
 // Mixin for Italic coloration
 @mixin ca-italic {
   & em {
-    color: var.$call-fti;
+    color: call-var.$call-fti;
   }
 }
 
@@ -64,7 +64,7 @@
 @mixin c-dropshadow {
 
   &:not(.admonition).drop-shadow {
-    box-shadow: 0 .2rem .5rem var.$call-box-shadow;
+    box-shadow: 0 .2rem .5rem call-var.$call-box-shadow;
   }
 
 }

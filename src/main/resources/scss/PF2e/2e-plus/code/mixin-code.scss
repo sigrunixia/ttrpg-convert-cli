@@ -1,10 +1,10 @@
-@use "../pf2e-plus-variables" as var2;
+@use "../pf2e-plus-variables" as plus-var;
 
 //.code {
 @mixin code {
-  background-color: var2.$bg-code-whitespc;
-  color: var2.$pf2e-ftc-code;
-  font-family: var2.$pf2e-ff-code;
+  background-color: plus-var.$pf2e-bg-code-light;
+  color: plus-var.$pf2e-ftc-code-light;
+  font-family: plus-var.$pf2e-f-fam-code;
   font-weight: 600;
 }
 
@@ -13,11 +13,11 @@
 
 // .markdown-rendered code {
 @mixin mr-code {
-  background-color: var2.$bg-code-whitespc;
-  border-radius: var2.$pf2e-radius-code;
-  color: var2.$pf2e-ftc-code;
-  font-family: var2.$pf2e-ff-code;
-  font-size: var2.$pf2e-font-text-size-code;
+  background-color: plus-var.$pf2e-bg-code-light;
+  border-radius: plus-var.$pf2e-radius-code;
+  color: plus-var.$pf2e-ftc-code-light;
+  font-family: plus-var.$pf2e-f-fam-code;
+  font-size: plus-var.$pf2e-font-text-size-code;
   font-weight: 600;
   padding: 0.1em 0.25em;
 }
@@ -40,8 +40,8 @@
 //.cm-math {
 //
 @mixin math-code {
-  background-color: var2.$bg-code-whitespc;
-  color: var2.$pf2e-ftc-code;
+  background-color: plus-var.$pf2e-bg-code-light;
+  color: plus-var.$pf2e-ftc-code-light;
   font-weight: 600;
 }
 

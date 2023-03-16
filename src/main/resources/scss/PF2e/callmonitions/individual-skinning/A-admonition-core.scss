@@ -1,5 +1,5 @@
 // Variables
-@use "../../pf2e-variables" as var;
+@use "../pf2e-callmonition-variables" as call-var;
 //Maps
 @use "seed-maps" as admonition-map;
 
@@ -10,7 +10,7 @@
     --callout-content-background: #{$value};
 
     background-color: #{$value};
-    box-shadow: 0 0.2rem 0.5rem #{var.$call-box-shadow};
+    box-shadow: 0 0.2rem 0.5rem #{call-var.$call-box-shadow};
 
     & .admonition-title {
       background-color: #{$value};

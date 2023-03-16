@@ -1,5 +1,5 @@
 // Variables
-@use "../../pf2e-variables" as var;
+@use "../pf2e-callmonition-variables" as call-var;
 
 
 // .callmonition {
@@ -12,12 +12,12 @@
 
 @mixin ca-heading($level) {
   $sizes: (
-    1: var.$call-fts-h1,
-    2: var.$call-fts-h2,
-    3: var.$call-fts-h3,
-    4: var.$call-fts-h4,
-    5: var.$call-fts-h5,
-    6: var.$call-fts-h6,
+    1: call-var.$call-fts-h1,
+    2: call-var.$call-fts-h2,
+    3: call-var.$call-fts-h3,
+    4: call-var.$call-fts-h4,
+    5: call-var.$call-fts-h5,
+    6: call-var.$call-fts-h6,
   );
 
   $padding-bottoms: (0.125em, 0.25em, 0.125em, 0.5em, 0.25em, 0.75em);
@@ -76,7 +76,7 @@
       }
 
       &::marker {
-        color: var.$call-ftu;
+        color: call-var.$call-ftu;
       }
     }
   }
@@ -85,8 +85,8 @@
 // & code {
 @mixin ca-content-code {
   & code {
-    background-color: var.$call-code-bg;
-    color: var.$call-ftc;
+    background-color: call-var.$call-code-bg;
+    color: call-var.$call-ftc;
   }
 }
 
@@ -124,7 +124,7 @@
 
 @mixin a-content-copy {
   .admonition-content-copy {
-    color: var.$call-ftl-active-A;
+    color: call-var.$call-ftl-active-A;
     cursor: pointer;
     opacity: 0;
     position: relative;
@@ -134,7 +134,7 @@
     transition: 1s opacity ease-in-out;
 
     &:hover {
-      color: lighten(var.$call-ftl-active-A, 30%);
+      color: lighten(call-var.$call-ftl-active-A, 30%);
     }
   }
 }

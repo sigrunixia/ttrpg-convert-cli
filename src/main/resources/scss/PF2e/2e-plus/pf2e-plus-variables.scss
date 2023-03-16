@@ -20,52 +20,59 @@ $dark-theme-br: 10%;
 }
 
 ////
-// Palette
+// Typography
+///
+
+// Styling
+$pf2e-font-decoration-link: underline;
+$pf2e-font-weight-link: 700;
+
+// Font Text
+$pf2e-ff-default: "Open Sans", "Roboto", "Helvetica Neue", "Pathfinder", sans-serif;
+$pf2e-ftc: darken-if(hsl(0, 0%, 14%), $dark-theme-br);
+
+// Links
+$pf2-ftl-active-blue: darken-if(hsl(210, 46%, 36%), $dark-theme-br);
+$pf2e-font-active-link-blue: darken-if(hsl(210, 100%, 68%), $dark-theme-br);
+$pf2e-font-active-link-red: darken-if(hsl(0, 28%, 30%), $dark-theme-br);
+$pf2e-font-inactive-link-red: darken-if(hsl(0, 34%, 40%), $dark-theme-br);
+$pf2e-font-unresolved-hover-link: darken-if(hsl(182, 80%, 38%), $dark-theme-br);
+$pf2e-font-unresolved-link: darken-if(hsl(200, 63%, 62%), $dark-theme-br);
+$pf2e-ftl-active-red: darken-if(hsl(0, 100%, 20%), $dark-theme-br);
+$pf2e-ff-links: "Helvetica Neue", Helvetica, Arial, "Pathfinder", sans-serif;
+
+// Strong
+$pf2e-font-bold-bright: darken-if(hsl(16, 100%, 42%), $dark-theme-br);
+
+// Italic
+$pf2e-font-text-italic: darken-if(hsl(100, 50%, 30%), $dark-theme-br);
+$pf2e-font-italic-green-trait: darken-if(hsl(110, 50%, 63%), $dark-theme-br);
+
+
+// Headers
+$pf2e-ft-h1: darken-if(hsl(330, 95%, 40%), $dark-theme-br);
+$pf2e-ft-h2: darken-if(hsl(220, 95%, 20%), $dark-theme-br);
+$pf2e-ft-h3: darken-if(hsl(0, 95%, 20%), $dark-theme-br);
+$pf2e-ft-h4: darken-if(hsl(15, 35%, 50%), $dark-theme-br);
+$pf2e-ft-h5: darken-if(hsl(15, 60%, 40%), $dark-theme-br);
+$pf2e-ft-h6: darken-if(hsl(95, 50%, 45%), $dark-theme-br);
+$pf2e-ff-fantasy-title: "Cinzel Decorative", "Playfair Display", "Lobster", "Pathfinder", cursive, fantasy;
+$pf2e-ff-title: "Montserrat", "Lato", "Pathfinder", Times, serif;
+
 /////
+// Code
+////
+$pf2e-bg-code-light: darken-if(hsl(30, 21%, 95%), $dark-theme-br);
+$pf2e-bg-code-dark: darken-if(hsl(0, 0%, 15%), $dark-theme-br);
+$pf2e-f-fam-code: "Fira Code", "Source Code Pro", "Inconsolata", "Pathfinder", monospace;
+$pf2e-ftc-code-light: darken-if(hsl(51, 100%, 50%), $dark-theme-br);
+$pf2e-ftc-dark: darken-if(hsl(0, 0%, 14%), $dark-theme-br);
+$pf2e-font-text-size-code: 0.8em;
+$pf2e-radius-code: 0.2em;
 
-$bg-code-whitespc: hsl(30, 21%, 95%);
-$pf2-ftl-active-blue: hsl(210, 46%, 36%);
-$pf2e-ftl-active-red: hsl(0, 100%, 20%);
-$pf2e-ft-bold: hsl(16, 100%, 32%);
-$pf2e-ft-h1: hsl(330, 95%, 40%);
-$pf2e-ft-h2: hsl(220, 95%, 20%);
-$pf2e-ft-h3: hsl(0, 95%, 20%);
-$pf2e-ft-h4: hsl(15, 35%, 50%);
-$pf2e-ft-h5: hsl(15, 60%, 40%);
-$pf2e-ft-h6: hsl(95, 50%, 45%);
-$pf2e-font-inactive-link-red: rgba(190, 20, 20, 1);
-$pf2e-font-italic-green-trait: hsl(110, 36%, 52%);
-$pf2e-font-text-code: hsl(51deg 100% 18%);
-$pf2e-font-text-color: hsl(0, 0%, 15%);
-$pf2e-font-unresolved-hover-link: rgba(12, 102, 103, 1);
-$pf2e-ftl-unresolved: hsl(200, 39%, 32%);
-$pf2e-font-text-italic: hsl(100, 50%, 30%);
-
-$pf2e-background-code-whitespace: hsl(0, 0%, 15%);
-$pf2e-font-active-link-blue: hsl(210, 100%, 68%);
-$pf2e-font-active-link-red: hsl(0, 28%, 30%);
-$pf2e-font-bold-bright: hsl(16, 100%, 42%);
-
-$pf2e-font-h1-color: hsl(330, 97%, 39%);
-$pf2e-font-h2-color: hsl(222, 100%, 73%);
-$pf2e-font-h3-color: hsl(0, 100%, 73%);
-$pf2e-font-h4-color: hsl(14, 66%, 66%);
-$pf2e-font-h5-color: hsl(11, 62%, 37%);
-$pf2e-font-h6-color: hsl(96, 42%, 44%);
-$pf2e-font-inactive-link-red: hsl(0, 34%, 39%);
-$pf2e-font-italic-green-trait: hsl(110, 50%, 63%);
-$pf2e-font-text-code: hsl(51, 100%, 50%);
-$pf2e-font-text-color: hsl(0, 0%, 14%);
-$pf2e-font-text-italic: hsl(100, 50%, 30%);
-$pf2e-font-unresolved-hover-link: hsl(182, 80%, 38%);
-$pf2e-font-unresolved-link: hsl(200, 63%, 62%);
-
-
-//
+/////
 // Link Box Shadows
-//
-
-/*! Link Box Shadows */
+/////
 $box-shadow-condition: darken-if(hsl(120, 100%, 20%), $dark-theme-br);
 $box-shadow-skills: darken-if(hsl(273, 34%, 72%), $dark-theme-br);
 $box-shadow-traits: darken-if(hsl(5, 87%, 18%), $dark-theme-br);
@@ -81,22 +88,8 @@ $box-shadow-unique: darken-if(hsl(278, 59%, 26%), $dark-theme-br);
 /////
 
 $pf2e-font-decoration-link: underline;
-$pf2e-font-family-code: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace;
-
 $pf2e-font-text-size-code: 0.8em;
 $pf2e-font-weight-link: 700;
-
-
-// Font Families
-$pf2e-ff-links: "Helvetica Neue", Helvetica, Arial, sans-serif, "Pathfinder";
-$pf2e-ff-default: "Open Sans", "Roboto", "Helvetica Neue", "Pathfinder", sans-serif;
-$call-ffp: "Lato", "Open Sans", "Source Sans Pro", "Pathfinder", sans-serif;
-$call-ff-title: "Montserrat", "Lato", "Pathfinder", Times, serif;
-$call-ff-fantasy-title: "Cinzel Decorative", "Playfair Display", "Lobster", "Pathfinder", cursive, fantasy;
-$call-ff-fantasy-body: "Libre Baskerville", "Cardo", "EB Garamond", "Pathfinder", "Cormorant", serif;
-$call-ff-fantasy-fallback: "Lato", "Open Sans", "Source Sans Pro", "Pathfinder", sans-serif;
-$pf2e-ff-code: "Fira Code", "Source Code Pro", "Inconsolata", "Pathfinder", monospace;
-$pf2e-ff-table: "Roboto", "Source Sans Pro", "Open Sans", "Pathfinder", sans-serif;
 
 
 //////
