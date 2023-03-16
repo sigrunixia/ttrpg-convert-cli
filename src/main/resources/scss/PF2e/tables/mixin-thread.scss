@@ -1,0 +1,32 @@
+// Variables
+@use "../pf2e-variables" as var;
+// Thread
+@mixin table-thread {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: var.$table-b-c;
+}
+
+//.markdown-rendered thead 
+@mixin mr-thread-babies {
+  > tr > th {
+    white-space: normal;
+    text-overflow: fade;
+    overflow: auto;
+  }
+}
+
+
+// .markdown-rendered thead tr {
+@mixin mr-thread-tr {
+  background-color: var.$table-bgH-Gold;
+}
+
+// .markdown-rendered thead tr
+@mixin mr-th-1st {
+  > th:first-child {
+    border-left-width: var.$table-c-1-b-width;
+  }
+}
+
+//}

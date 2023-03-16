@@ -1,0 +1,43 @@
+// Variables
+@use "../../pf2e-variables" as var;
+//Maps
+@use "seed-maps" as callout-map;
+
+//Time to color this Seed
+@each $key, $value in callout-map.$pf2e-callouts {
+  .callout.callout.callout[data-callout="#{$key}"] {
+    --callout-color: #{$value};
+    --callout-content-background: #{$value};
+    background-color: #{$value};
+    border-color: hsla(hue($value), saturation($value), lightness($value), var.$callout-border-opacity);
+
+    & .callout-title {
+      background-color: #{$value};
+
+      & .callout-icon {
+        color: invert($value, 100%);
+      }
+
+      & .callout-title-inner {
+        background-color: #{$value};
+
+        & .callout-icon {
+          color: invert($value, 100%);
+        }
+      }
+    }
+
+    & .callout-content {
+      background-color: #{$value};
+
+      & blockquote {
+        $lightness: lightness($value);
+        @if ($lightness > 50) {
+          background-color: hsla(hue($value), saturation($value), $lightness, 1); /* Apply if color is light */
+        } @else {
+          background-color: hsla(hue($value), saturation($value), $lightness, 0.8); /* Apply if color is dark */
+        }
+      }
+    }
+  }
+}

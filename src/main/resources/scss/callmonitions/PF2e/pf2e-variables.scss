@@ -1,0 +1,188 @@
+/*! 
+Legend
+
+Text:
+b = Bold 
+c = Color
+f = Font
+i = Italic
+l = Link
+p = Paragraph/Body/css p
+s = Size
+t = Text
+u = Underline
+-A = Alternative
+
+
+Callouts/Tables:
+call = Callout
+b = Border
+bg = Background
+T = Title
+-c = Column
+-r = Row
+H = Header
+-A = Alternative
+
+*/
+// Admonition Override
+
+root {
+  --admonition-details-icon: $admon-detail;
+  --admonition-margin-bottom: $admon-m-B;
+  --admonition-margin-bottom-lp: $admon-m-B-lp;
+  --admonition-margin-top: $admon-m-t;
+  --admonition-margin-top-lp: $admon-m-t-lp;
+}
+
+// Admonition Variables
+// Legend
+// lp = Live Preview
+// T = Top
+// m= Margin
+// B = Bottom
+
+$admon-m-t-lp: 0;
+$admon-m-t: 1.25em;
+$admon-m-B-lp: 0;
+$admon-m-B: 1.25em;
+$admon-detail: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpolyline points=\'10 15 15 20 20 15\'%3E%3C/polyline%3E%3Cpath d=\'M4 4h7a4 4 0 0 1 4 4v12\'%3E%3C/path%3E%3C/svg%3E');
+
+////
+// Palette 
+////
+
+// Functions and Measures
+$dark-theme-br: 10%;
+$callout-border-opacity: 25%;
+
+
+@function darken-if($color, $amount) {
+  @if selector-nest('.theme-dark') {
+    @return darken($color, $amount);
+  } @else {
+    @return $color;
+  }
+}
+
+// General Callout Styling
+$call-fti: darken-if(hsl(116, 100%, 18%), $dark-theme-br);
+$block-ftp: darken-if(hsl(40, 30%, 88%), $dark-theme-br);
+$call-ftb: darken-if(hsl(180, 10%, 28%), $dark-theme-br);
+$call-ftl-active: darken-if(hsl(213, 30%, 32%), $dark-theme-br);
+$call-ftl-inactive: darken-if(hsl(211, 51%, 58%), $dark-theme-br);
+$call-ftl-active-A: darken-if(hsl(200, 33%, 82%), $dark-theme-br);
+$call-ft-h1: darken-if(hsl(330, 95%, 40%), $dark-theme-br);
+$call-ft-h1-A: darken-if(hsl(0, 0%, 100%), $dark-theme-br);
+$call-ft-h2: darken-if(hsl(222, 95%, 65%), $dark-theme-br);
+$call-ft-h2-A: darken-if(hsl(0, 6%, 68%), $dark-theme-br);
+$call-ft-h3: darken-if(hsl(0, 95%, 70%), $dark-theme-br);
+$call-ft-h3-A: darken-if(hsl(0, 0%, 18%), $dark-theme-br);
+$call-ft-red: darken-if(hsl(6, 70%, 47%), $dark-theme-br);
+$call-ftu-A: darken-if(hsl(86, 29%, 46%), $dark-theme-br);
+$call-ftu: darken-if(hsl(0, 3%, 29%), $dark-theme-br);
+$call-ft-white: darken-if(hsl(0, 0%, 100%), $dark-theme-br);
+$call-ft: darken-if(hsl(0, 19%, 13%), $dark-theme-br);
+$call-ft-A: darken-if(hsl(0, 0%, 85%), $dark-theme-br);
+$call-ftc: darken-if(hsl(45, 100%, 17%), $dark-theme-br);
+
+// General Callout Colors
+$call-code-bg: darken-if(hsl(200, 50%, 90%), $dark-theme-br);
+$call-box-shadow: darken-if(hsl(230, 50%, 20%), $dark-theme-br);
+$success-degree: darken-if(hsl(260, 50%, 90%), $dark-theme-br);
+$call-box-shadow-blue: darken-if(hsl(215, 50%, 60%), $dark-theme-br);
+$call-fT-tip: darken-if(hsl(50, 50%, 70%), $dark-theme-br);
+
+// Admonitions
+$embed-ability: darken-if(hsl(215, 30%, 90%), $dark-theme-br);
+$embed-action: darken-if(hsl(10, 40%, 90%), $dark-theme-br);
+$embed-avatar: darken-if(hsl(35, 70%, 90%), $dark-theme-br);
+$embed-disease: darken-if(hsl(55, 25%, 90%), $dark-theme-br);
+$embed-feat: darken-if(hsl(260, 85%, 95%), $dark-theme-br);
+$embed-item: darken-if(hsl(350, 95%, 95%), $dark-theme-br);
+$embed-ritual: darken-if(hsl(185, 15%, 90%), $dark-theme-br);
+$inline-affliction: darken-if(hsl(55, 40%, 90%), $dark-theme-br);
+$inline-attack: darken-if(hsl(30, 70%, 90%), $dark-theme-br);
+$pf2e-tip: darken-if(hsl(180, 50%, 95%), $dark-theme-br);
+$pf2e-summary: darken-if(hsl(360, 90%, 95%), $dark-theme-br);
+
+// PF2 Colors
+// Callout BG Colors
+$pf2e-beige: darken-if(hsl(40, 65%, 90%), $dark-theme-br);
+$pf2e-brown: darken-if(hsl(30, 15%, 90%), $dark-theme-br);
+$pf2e-example: darken-if(hsl(100, 90%, 90%), $dark-theme-br);
+$pf2e-inset: darken-if(hsl(25, 40%, 90%), $dark-theme-br);
+$pf2e-key-box: darken-if(hsl(160, 70%, 95%), $dark-theme-br);
+$pf2e-note: darken-if(hsl(130, 10%, 90%), $dark-theme-br);
+$pf2e-paper: darken-if(hsl(50, 35%, 90%), $dark-theme-br);
+$pf2e-quote: darken-if(hsl(280, 60%, 95%), $dark-theme-br);
+$pf2e-sidebar: darken-if(hsl(25, 40%, 90%), $dark-theme-br);
+$pf2e-red: darken-if(hsl(5, 70%, 90%), $dark-theme-br);
+
+// Pathfinder Callout Extras
+$pf2e-bgT-tip: darken-if(hsl(225, 90%, 30%), $dark-theme-br);
+
+// Statblocks
+$pf2e-bg-statblock: darken-if(hsl(185, 40%, 90%), $dark-theme-br);
+$pf2e-statblock-section: darken-if(hsl(330, 5%, 30%), $dark-theme-br);
+
+// Table Colors
+$table-bg-c1: darken-if(hsl(50, 50%, 90%), $dark-theme-br);
+$table-bg-c2: darken-if(hsl(50, 35%, 80%), $dark-theme-br);
+$table-bg-r1: darken-if(hsl(50, 35%, 80%), $dark-theme-br);
+$table-bg-r2: darken-if(hsl(50, 50%, 90%), $dark-theme-br);
+$table-b-c: darken-if(hsl(45, 35%, 90%), $dark-theme-br);
+$table-bg-c-A: darken-if(hsl(50, 35%, 80%), $dark-theme-br);
+$table-ftcH: darken-if(hsl(5, 5%, 95%), $dark-theme-br);
+$table-ftcl: darken-if(hsl(5, 5%, 20%), $dark-theme-br);
+$table-ftc: darken-if(hsl(5, 5%, 20%), $dark-theme-br);
+$table-bgH-Gold: darken-if(hsl(50, 80%, 70%), $dark-theme-br);
+$table-bgH-Blue: darken-if(hsl(251, 100%, 50%), $dark-theme-br);
+$table-b-cH: darken-if(hsl(40, 40%, 60%), $dark-theme-br);
+$table-cH: darken-if(hsl(5, 95%, 95%), $dark-theme-br);
+$table-bg-rH: darken-if(hsl(215, 40%, 60%), $dark-theme-br);
+$table-ftl-Red: darken-if(hsl(355, 80%, 30%), $dark-theme-br);
+
+
+////
+// Variables
+////
+
+//
+// Table Stuff
+//
+
+$table-b-width: 1px;
+$table-c-1-b-width: 1px;
+$table-c-max-width: available;
+$table-h-b-width: 1px;
+$table-h-size: 16px;
+$table-space: normal;
+
+//
+// Callouts
+//
+
+// Callout Font Families
+$call-ffp: Frutiger, 'Helvetica Neue', Helvetica, Arial, Pathfinder, sans-serif;
+$call-ff-title: Garamond, Baskerville, 'Palatino Linotype', 'Book Antiqua', Georgia, 'Apple Garamond', 'Hoefler Text', 'Didot', 'Pathfinder', serif;
+$call-ff-fantasy-title: 'Cinzel Decorative', 'Playfair Display', 'Lobster', 'MedievalSharp', fantasy;
+$call-ff-fantasy-body: 'Libre Baskerville', 'Cardo', 'EB Garamond', 'Cormorant', serif;
+$call-ff-fantasy-fallback: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+
+// Callout Font Sizes
+// Clamp Math
+$call-title-size: clamp(15px, 50%, 20px);
+$call-ftsp: clamp(14px, 1.0625em, 18px);
+$call-fts-h1: clamp(18px, 1.5em, 22px);
+$call-fts-h2: clamp(16px, 1.3125em, 20px);
+$call-fts-h3: clamp(14px, 1.125em, 16px);
+$call-fts-h4: clamp(12px, 1em, 14px);
+$call-fts-h5: clamp(10px, 0.9375em, 12px);
+$call-fts-h6: clamp(8px, 0.8125em, 10px);
+
+// Font Styling
+$call-f-title-align: center;
+$call-f-title-weight: 700;
+$call-f-p-align: 500;
+$call-line-height: 1.2;

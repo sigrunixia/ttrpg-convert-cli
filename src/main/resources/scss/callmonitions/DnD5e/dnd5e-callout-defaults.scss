@@ -1,0 +1,77 @@
+//Colors
+@use '5e-variables/dnd5e-callmonition-color';
+// Variable
+@use '5e-variables/dnd5e-callmonition-variables';
+
+// Defaults
+
+/*! Monster: statblocks and #token images */
+.rendered-widget,
+.markdown-rendered,
+.markdown-preview-section {
+  .admonition-statblock-parent {
+    clear: both;
+  }
+  .callout[data-callout*="statblock"] {
+    --callout-color: var(--dnd5e-statblock-section-line-alt);
+    --callout-border-width: 0 0 0 0.08rem;
+
+    .callout-title {
+      line-height: var(--line-height);
+
+      .callout-title-inner {
+        font-size: var(--h3-size);
+        flex: 2;
+      }
+    }
+
+    img,
+    div {
+      &[src$="#token"] {
+        float: right;
+        margin-left: 5px;
+        width: 150px;
+      }
+    }
+    .callout-content {
+      background-color: var(--background-primary);
+
+      > :first-child {
+        margin-top: 0.5em;
+      }
+      > :last-child {
+        margin-bottom: 0.5em;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--default-font);
+        font-variant: common-ligatures small-caps;
+      }
+      h1 {
+        font-size: 1.4em;
+        line-height: 1.4em;
+        margin: 0;
+        padding: 0;
+      }
+      h2,
+      h3 {
+        font-size: 1.2em;
+        line-height: 1.2em;
+        padding: .5em 0 0 0;
+        margin-top: .2em;
+        margin-bottom: .3em;
+        border-bottom: 1px solid rgb(var(--dnd5e-statblock-section-line-alt));
+      }
+      p {
+        line-height: 1.2em;
+        margin-block-start: .5em;
+      }
+      li {
+        line-height: 1.2em;
+        margin-block-start: .5em;
+      }
+    }
+  }
+}

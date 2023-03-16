@@ -1,0 +1,34 @@
+// Variables
+@use "../pf2e-variables" as var;
+
+// th {
+@mixin table-th {
+  background-color: var.$table-bgH-Gold;
+  color: var.$table-ftcH;
+  display: table-cell;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: inherit;
+}
+
+// .markdown-rendered th {
+@mixin mr-table-th {
+  padding: 4px 8px;
+  border: var.$table-b-width solid var.$table-b-c;
+  max-width: var.$table-max-width;
+  font-size: var(--table-header-size);
+  font-weight: var(--table-header-weight);
+  color: var(--table-header-color);
+  font-family: var(--table-header-font);
+  text-align: left;
+  line-height: var(--line-height-tight);
+}
+
+.markdown-rendered th {
+  font-size: var.$pf2e-s-H;
+  font-weight: var.$pf2e-fw-H;
+  color: var(--table-header-color);
+  font-family: var(--table-header-font);
+  text-align: left;
+  line-height: var(--line-height-tight);
+}

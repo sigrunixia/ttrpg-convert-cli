@@ -1,0 +1,51 @@
+@use "../pf2e-plus-variables" as var2;
+
+//.code {
+@mixin code {
+  background-color: var2.$bg-code-whitespc;
+  color: var2.$pf2e-ftc-code;
+  font-family: var2.$pf2e-ff-code;
+  font-weight: 600;
+}
+
+//
+
+
+// .markdown-rendered code {
+@mixin mr-code {
+  background-color: var2.$bg-code-whitespc;
+  border-radius: var2.$pf2e-radius-code;
+  color: var2.$pf2e-ftc-code;
+  font-family: var2.$pf2e-ff-code;
+  font-size: var2.$pf2e-font-text-size-code;
+  font-weight: 600;
+  padding: 0.1em 0.25em;
+}
+
+// .markdown-rendered pre[class*="language-"] {
+@mixin mr-pre-code-language {
+  white-space: pre;
+
+  & code {
+    overflow-x: scroll;
+    white-space: pre;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+//.cm-s-obsidian span.cm-inline-code, 
+//.cm-math {
+//
+@mixin math-code {
+  background-color: var2.$bg-code-whitespc;
+  color: var2.$pf2e-ftc-code;
+  font-weight: 600;
+}
+
+// .cm-line.HyperMD-list-line {
+@mixin code-indent {
+  tab-size: var(--list-indent);
+}

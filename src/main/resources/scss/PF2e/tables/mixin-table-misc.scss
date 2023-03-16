@@ -1,0 +1,13 @@
+// Variables
+@use "../pf2e-variables" as var;
+// Table-Misc  
+// & .internal-link {
+@mixin table-internal-link {
+  & .internal-link {
+    color: var.$table-ftl-Red;
+    font-style: italic;
+    font-weight: 600;
+  }
+}
+
+//  }

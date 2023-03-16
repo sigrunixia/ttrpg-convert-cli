@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
+  "rules": {
+    "color-named": "never",
+    "color-no-hex": true,
+    "function-disallowed-list": [
+      "rgb",
+      "hwb",
+      "lch"
+    ],
+    "declaration-property-unit-allowed-list": {
+      "/^border/": [
+        "px"
+      ],
+      "/^padding|^gap/": [
+        "rem"
+      ]
+    },
+    "unit-allowed-list": [
+      "%",
+      "deg",
+      "px",
+      "rem",
+      "ms"
+    ]
+  }
+}

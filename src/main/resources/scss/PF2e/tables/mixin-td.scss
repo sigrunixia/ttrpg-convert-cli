@@ -1,0 +1,23 @@
+// Variables
+@use "../pf2e-variables" as var;
+// Mixins
+// td
+@mixin table-td {
+  border: var.$table-b-width solid var.$table-b-c;
+  color: var.$table-ftc;
+  font-size: var.$table-h-size;
+  max-width: var.$table-max-width;
+  padding: 4px 8px;
+}
+
+// .markdown-rendered td 
+
+
+//.markdown-rendered tbody 
+@mixin mr-tbody-babies {
+  > tr > td {
+    white-space: normal;
+    text-overflow: fade;
+    overflow: auto;
+  }
+}

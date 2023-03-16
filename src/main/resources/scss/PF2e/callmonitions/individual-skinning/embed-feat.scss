@@ -1,0 +1,18 @@
+@use "../../pf2e-variables" as var;
+
+.callout[data-callout="embed-feat"] {
+
+  & .callout-title {
+
+  }
+
+  & .callout-title-inner {
+
+  }
+
+  & .callout-content {
+
+    &:has([data-callout="embed-ability"]) {
+    }
+  }
+}

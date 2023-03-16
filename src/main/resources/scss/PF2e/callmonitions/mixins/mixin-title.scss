@@ -1,0 +1,173 @@
+// Variables
+@use "../../pf2e-variables" as var;
+
+
+// .callmonition {
+//  & .callmonition-title {
+
+@mixin ca-title {
+  border: none;
+  display: flex;
+  font-family: var.$call-ff-title;
+  font-size: var.$call-fts-h1;
+  line-height: var.$call-line-height;
+  min-height: 1.5rem;
+  padding-top: 10px;
+  position: relative;
+  z-index: 5;
+
+  & .is-collapsible {
+    cursor: pointer;
+  }
+
+}
+
+@mixin ca-title-svg {
+  .svg-icon {
+    height: 18px;
+    width: 18px;
+    stroke-width: 2px;
+
+    &.svg-inline {
+      display: inherit;
+      line-height: 0.875em;
+      vertical-align: -0.125em;
+
+      svg:not(:root) & {
+        overflow: visible;
+      }
+    }
+  }
+}
+
+
+//      background-color: #{$value};
+//    & .callmonition-title-inner {
+//    }
+//  }
+//
+//  & .callmonition-content {
+//    & blockquote {
+//    }
+//  }
+//}
+
+
+//  .callout {
+//  & .callout-title {
+//      background-color: #{$value};
+
+// & .callout-title-inner {
+@mixin c-inner-top {
+  text-align: center;
+  align-items: center;
+  justify-self: center;
+
+  &:not(.callout-content) > .callout-title-inner {
+    font-size: var.$call-title-size;
+    font-weight: var.$call-f-title-weight;
+    padding-bottom: 0.125em;
+  }
+
+  em {
+    font-weight: var.$call-f-title-weight;
+  }
+}
+
+//
+// & .callout-icon {
+@mixin callout-icon {
+  @include ca-title-svg;
+  filter: contrast(175%) brightness(103%);
+  &:not(.callout-content) {
+    display: flex;
+    align-self: unset;
+  }
+
+  &:has(.callout-content) {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+//    & .callout-title-inner {
+//    }
+//  }
+
+//    & .callout-content {
+//    background-color: #{$value};
+//      & blockquote {
+//      background-color: (#{$value}, var(--callout-background-alpha));
+//      }
+//    }
+//  }
+
+
+// .admonition {
+//  & .admonition-title {
+//    background-color: #{$value};
+
+@mixin m-inner-top {
+  text-align: center;
+  align-items: center;
+  justify-self: center;
+
+  &:not(.admonition-content) > .admonition-title-content {
+    font-size: var.$call-title-size;
+    font-weight: var.$call-f-title-weight;
+    padding-bottom: 0.125em;
+  }
+
+  em {
+    font-weight: var.$call-f-title-weight;
+  }
+
+}
+
+@mixin a-notitle {
+  &:empty + .admonition-content {
+    padding: 4px 12px;
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+
+  & .no-title {
+    font-size: 0;
+
+    @at-root &:not(.admonition) {
+      display: none;
+    }
+  }
+}
+
+//.admonition-title-icon
+@mixin admonition-icon {
+  @include ca-title-svg;
+  filter: contrast(175%) brightness(103%);
+
+  &:not(.callout-content) {
+    display: flex;
+  }
+
+  &:has(.admonition-content) {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+
+//      & .admonition-title-content {
+
+//      }
+
+//  }
+
+//  & .admonition-content {
+//    background-color: #{$value};
+
+//    & blockquote {
+//      background-color: (#{$value}, var(--callout-background-alpha));
+//    }
+
+//  }
+//}

@@ -1,0 +1,39 @@
+// Variable for Functions
+$dark-theme-dnd-br: 10%;
+
+
+// Darken Function
+@function darken-if($color, $amount) {
+  @if selector-nest(".theme-dark") {
+    @return darken($color, $amount);
+  } @else {
+    @return $color;
+  }
+}
+
+// Statblock Variables
+$dnd5e-stat-bg: darken-if(hsl(360deg 90% 85%), $dark-theme-dnd-br);
+$dnd5e-stat-sect-line: darken-if(hsl(330deg 5% 30%), $dark-theme-dnd-br);
+
+// Admonition Override
+
+root {
+  --admonition-details-icon: $admon-detail;
+  --admonition-margin-bottom: $admon-m-B;
+  --admonition-margin-bottom-lp: $admon-m-B-lp;
+  --admonition-margin-top: $admon-m-t;
+  --admonition-margin-top-lp: $admon-m-t-lp;
+}
+
+// Admonition Variables
+// Legend
+// lp = Live Preview
+// T = Top
+// m= Margin
+// B = Bottom
+
+$admon-m-t-lp: 0;
+$admon-m-t: 1.25em;
+$admon-m-B-lp: 0;
+$admon-m-B: 1.25em;
+$admon-detail: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='10 15 15 20 20 15'%3E%3C/polyline%3E%3Cpath d='M4 4h7a4 4 0 0 1 4 4v12'%3E%3C/path%3E%3C/svg%3E");

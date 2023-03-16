@@ -60,3 +60,7 @@ jreleaser-cli.jar
 native-image-Linux-logs
 native-image-Windows-logs
 native-image-macOS-logs
+
+# Css Junk
+.css
+.map

@@ -1,0 +1,9 @@
+// Variables
+@use "../pf2e-variables" as var;
+// Table-TR
+//tr {
+@mixin table-tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: var.$table-b-c;
+}

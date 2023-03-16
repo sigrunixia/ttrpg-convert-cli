@@ -1,0 +1,17 @@
+@use "../../pf2e-variables" as var;
+
+// Mixin After main .callout or .admonition box
+// Might work for -content too?
+@mixin ca-after {
+  &::after {
+    content: "";
+    display: block;
+    height: 1.5rem;
+    left: 0;
+    padding-bottom: 0.25em;
+    position: absolute;
+    top: -1.5rem; /* adjust as needed */
+    width: calc(100% - 3rem);
+    z-index: 2;
+  }
+}

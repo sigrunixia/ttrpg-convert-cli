@@ -1,21 +1,12 @@
 // These are the base things that should be usable on the main pf2e pages 
 // of the compendium, and all the other pages too.
+
 // Pf2e Base
-@use 'PF2e/pf2e-variables';
+@use "pf2e/pf2e-variables";
+@use "pf2e/pf2e-plus-variables";
 
-// Pf2e-Plus Variables
-@use 'pf2e-plus/pf2e-plus-variables';
+@use "compendium-pf2e";
 
-// PF2e-Plus: Pathfinder Font
-@use 'PF2e-Plus/pathfinder-font';
-
-//  Basic Styling to make Compendium and Rules Work
-@use 'PF2e/pf2e-link-icons';
-@use 'PF2e/pf2e-misc';
-@use 'PF2e/pf2e-tables';
-
-// Fixes
-@use 'PF2e-Plus/fixes/trait-text-spacing';
-
-// Page Specific Theming
-@use 'PF2e-Plus/plus-pages/index';
+// PF2e Plus Stuff
+@use "pf2e/2e-plus/code";
+@use "pages/pf2e-pages";

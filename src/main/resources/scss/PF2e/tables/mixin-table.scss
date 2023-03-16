@@ -1,0 +1,26 @@
+// Variables
+@use "../pf2e-variables" as var;
+// table {
+@mixin table {
+  border-color: var.$table-b-c;
+  border-spacing: var.$table-b-width;
+  box-sizing: border-box;
+  display: table;
+  font-family: sans-serif;
+  text-indent: initial;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+// .markdown-rendered table {
+@mixin mr-table {
+  border-collapse: collapse;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+//}
+//.markdown-source-view.mod-cm6 .cm-table-widget table {
+@mixin msv-table {
+  margin-bottom: 0;
+}

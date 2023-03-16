@@ -1,0 +1,118 @@
+/*! 
+Legend
+
+Text:
+b = Bold 
+c = Color
+f = Font
+i = Italic
+l = Link
+p = Paragraph/Body/css p
+s = Size
+t = Text
+u = Underline
+-A = Alternative
+
+
+Callouts/Tables:
+call = Callout
+b = Border
+bg = Background
+T = Title
+-c = Column
+-r = Row
+H = Header
+-A = Alternative
+
+*/
+root {
+  --admonition-details-icon: $admon-detail;
+  --admonition-margin-bottom: $admon-m-B;
+  --admonition-margin-bottom-lp: $admon-m-B-lp;
+  --admonition-margin-top: $admon-m-t;
+  --admonition-margin-top-lp: $admon-m-t-lp;
+}
+
+table {
+  border-collapse: collapse;
+  border-color: #ded5ba;
+  border-spacing: 1px;
+  box-sizing: border-box;
+  display: table;
+  font-family: sans-serif;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+table .internal-link {
+  color: #5c0a11;
+  font-style: italic;
+  font-weight: 600;
+}
+table.reveal td:nth-child(odd), table.is-live-preview td:nth-child(odd) {
+  background-color: #cdc498;
+}
+table.reveal tr:nth-child(even), table.is-live-preview tr:nth-child(even) {
+  background-color: #e6ddb3;
+  opacity: unset;
+  border-left: 1px solid #ded5ba;
+  border-right: 1px solid #ded5ba;
+}
+table.reveal th, table.is-live-preview th {
+  background-color: #ebcf47;
+  color: #dbd7d7;
+}
+table.markdown-rendered {
+  border-collapse: collapse;
+  margin-block-end: 14px;
+  margin-block-start: 14px;
+}
+table.markdown-rendered thead tr th {
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+table.markdown-rendered thead tr th:nth-child(2n+2) {
+  background-color: #ebcf47;
+}
+table.markdown-rendered tbody tr td {
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+table.markdown-rendered tbody tr td:nth-child(odd) td:hover {
+  background-color: #4d77b3;
+  color: darkgoldenrod;
+}
+table.markdown-rendered tbody tr td:nth-child(odd) td:hover a {
+  color: darkgoldenrod;
+}
+table.markdown-rendered tbody tr td:nth-child(2n+2) {
+  background-color: #cdc498;
+}
+table.markdown-rendered tbody tr:hover td {
+  background-color: #4d77b3;
+  color: darkgoldenrod;
+  font-weight: 700;
+}
+table.markdown-rendered tbody tr:hover td a {
+  color: darkgoldenrod;
+}
+table.markdown-rendered th,
+table.markdown-rendered table th {
+  background-color: #ebcf47;
+  color: #dbd7d7;
+}
+table.markdown-rendered td {
+  border: 1px solid #ded5ba;
+  color: #1b1818;
+  font-size: 16px;
+  max-width: available;
+  padding: 4px 8px;
+}
+table.markdown-rendered td:nth-child(odd) td:hover {
+  background-color: #4d77b3;
+  color: darkgoldenrod;
+}
+table.markdown-rendered td:nth-child(odd) td:hover a {
+  color: darkgoldenrod;
+}
+
+/*# sourceMappingURL=pf2e-tables.css.map */

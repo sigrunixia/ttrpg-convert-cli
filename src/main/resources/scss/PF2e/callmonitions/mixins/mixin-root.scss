@@ -1,0 +1,109 @@
+// Variables
+@use "../../pf2e-variables" as var;
+
+// .callmonition {
+// The Basics
+@mixin ca-root {
+  --callout-background-alpha: 20%;
+  --callout-padding: 0.125em;
+  --callout-radius: 0.125em;
+
+  font-family: var.$call-ffp;
+  font-size: var.$call-ftsp;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  padding: 0.8125em;
+  position: relative;
+}
+
+// Internal Links Only
+@mixin ca-link {
+  & .internal-link {
+    color: var.$call-ftl-active;
+    font-weight: bold;
+    opacity: unset;
+    padding: 0.0625em;
+    text-decoration-line: inherit;
+  }
+
+  & .internal-link.is-unresolved {
+    color: var.$call-ftl-inactive;
+    font-style: italic;
+  }
+}
+
+// Mixin to add Strong Coloration
+@mixin ca-strong {
+  & strong {
+    color: var.$call-ftb;
+    padding-inline: 0;
+  }
+}
+
+// Mixin for Italic coloration
+@mixin ca-italic {
+  & em {
+    color: var.$call-fti;
+  }
+}
+
+
+//  & .callmonition-title {
+//    & .callmonition-title-inner {
+//    }
+//  }
+//
+//  & .callmonition-content {
+//    & blockquote {
+//    }
+//  }
+//}
+
+
+//  .callout {
+@mixin c-dropshadow {
+
+  &:not(.admonition).drop-shadow {
+    box-shadow: 0 .2rem .5rem var.$call-box-shadow;
+  }
+
+}
+
+//  & .callout-title {
+//    & .callout-title-inner {
+//    }
+//  }
+
+//    & .callout-content {
+//    background-color: #{$value};
+//      & blockquote {
+//      background-color: (#{$value}, var(--callout-background-alpha));
+//      }
+//    }
+//  }
+
+
+// .admonition {
+
+@mixin a-empty {
+  &:not(.is-live-preview):is(.no-content) {
+    display: none;
+  }
+  &:is(.is-live-preview):is(.no-content) {
+    opacity: 0.3;
+  }
+}
+
+//  & .admonition-title {
+//    background-color: #{$value};
+//  }
+
+//  & .admonition-content {
+//    background-color: #{$value};
+
+//    & blockquote {
+//      background-color: (#{$value}, var(--callout-background-alpha));
+//    }
+
+//  }
+//}

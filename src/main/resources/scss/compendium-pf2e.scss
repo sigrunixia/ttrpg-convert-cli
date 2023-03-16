@@ -1,12 +1,8 @@
 // These are the base things that should be usable on the main pf2 pages of the compendium. 
 // PF2e-Base Variables
-@use 'PF2e/pf2e-variables';
+@use "pf2e/pf2e-variables" as var;
 
-//  Basic Styling to make Compendium and Rules Work
-@use 'PF2e/pf2e-callmonition';
-@use 'PF2e/pf2e-link-icons';
-@use 'PF2e/pf2e-misc';
-@use 'PF2e/pf2e-tables';
-
-// Fixes
-@use 'PF2e-Plus/fixes/trait-text-spacing';
+// Completed Files
+@use "pf2e/pf2e-callmonition";
+@use "pf2e/pf2e-tables";
+@use "pf2e/pf2e-basic-typography";

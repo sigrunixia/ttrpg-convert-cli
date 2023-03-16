@@ -1,0 +1,31 @@
+@use "../../pf2e-variables" as var;
+// Mixin Before main .callout or .admonition box
+// Might work for -content too?
+@mixin ca-before {
+  &::before {
+    content: "";
+    display: block;
+    height: 1.5rem;
+    left: 50%;
+    padding-top: 0.25em;
+    position: absolute;
+    top: -1.5rem; /* adjust as needed */
+    transform: translateX(-50%);
+    width: 1.5rem;
+    z-index: 2;
+  }
+}
+
+@mixin a-arrows {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc(var(--size-0) - 1rem);
+    top: calc(var(--size-2-2) + 1px);
+    width: 0;
+    height: 0;
+    border: calc(var(--size-2-2) / 2) solid transparent;
+    border-left-color: var(--arrow-color);
+  }
+}

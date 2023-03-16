@@ -1,0 +1,770 @@
+/*! 
+Legend
+
+Text:
+b = Bold 
+c = Color
+f = Font
+i = Italic
+l = Link
+p = Paragraph/Body/css p
+s = Size
+t = Text
+u = Underline
+-A = Alternative
+
+
+Callouts/Tables:
+call = Callout
+b = Border
+bg = Background
+T = Title
+-c = Column
+-r = Row
+H = Header
+-A = Alternative
+
+*/
+root {
+  --admonition-details-icon: $admon-detail;
+  --admonition-margin-bottom: $admon-m-B;
+  --admonition-margin-bottom-lp: $admon-m-B-lp;
+  --admonition-margin-top: $admon-m-t;
+  --admonition-margin-top-lp: $admon-m-t-lp;
+}
+
+.pf2e .callout {
+  --callout-background-alpha: 20%;
+  --callout-padding: 0.125em;
+  --callout-radius: 0.125em;
+  font-family: Frutiger, "Helvetica Neue", Helvetica, Arial, Pathfinder, sans-serif;
+  font-size: clamp(14px, 1.0625em, 18px);
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  padding: 0.8125em;
+  position: relative;
+}
+.pf2e .callout .internal-link {
+  color: #273649;
+  font-weight: bold;
+  opacity: unset;
+  padding: 0.0625em;
+  text-decoration-line: inherit;
+}
+.pf2e .callout .internal-link.is-unresolved {
+  color: #3c78b9;
+  font-style: italic;
+}
+.pf2e .callout strong {
+  color: #293232;
+  padding-inline: 0;
+}
+.pf2e .callout em {
+  color: #032900;
+}
+.pf2e .callout:not(.admonition).drop-shadow {
+  box-shadow: 0 0.2rem 0.5rem #0d1126;
+}
+.pf2e .admonition {
+  --callout-background-alpha: 20%;
+  --callout-padding: 0.125em;
+  --callout-radius: 0.125em;
+  font-family: Frutiger, "Helvetica Neue", Helvetica, Arial, Pathfinder, sans-serif;
+  font-size: clamp(14px, 1.0625em, 18px);
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  padding: 0.8125em;
+  position: relative;
+}
+.pf2e .admonition .internal-link {
+  color: #273649;
+  font-weight: bold;
+  opacity: unset;
+  padding: 0.0625em;
+  text-decoration-line: inherit;
+}
+.pf2e .admonition .internal-link.is-unresolved {
+  color: #3c78b9;
+  font-style: italic;
+}
+.pf2e .admonition strong {
+  color: #293232;
+  padding-inline: 0;
+}
+.pf2e .admonition em {
+  color: #032900;
+}
+
+.pf2e .callout .callout-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .callout .callout-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .callout .callout-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .callout .callout-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .callout .callout-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .callout .callout-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .callout .callout-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .callout .callout-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .callout .callout-content h3::before {
+  display: none;
+}
+.pf2e .callout .callout-content h3::after,
+.pf2e .callout .callout-content h3 .HyperMD-header-3::after {
+  display: none;
+}
+.pf2e .callout .callout-content:hover {
+  opacity: 0.2;
+}
+.pf2e .callout .callout-content ul, .pf2e .callout .callout-content ol {
+  padding: 0;
+}
+.pf2e .callout .callout-content ul li:nth-child(n) strong:not(:only-child):after, .pf2e .callout .callout-content ol li:nth-child(n) strong:not(:only-child):after {
+  content: ":";
+}
+.pf2e .callout .callout-content ul li::marker, .pf2e .callout .callout-content ol li::marker {
+  color: #322f2f;
+}
+.pf2e .admonition .admonition-content {
+  color: #a0bfcf;
+  cursor: pointer;
+  opacity: 0;
+  position: relative;
+  margin: 0.375rem;
+  right: 0;
+  top: 0;
+  transition: 1s opacity ease-in-out;
+}
+.pf2e .admonition .admonition-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .admonition .admonition-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .admonition .admonition-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .admonition .admonition-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .admonition .admonition-content h1 {
+  font-size: clamp(18px, 1.5em, 22px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h2 {
+  font-size: clamp(16px, 1.3125em, 20px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h3 {
+  font-size: clamp(14px, 1.125em, 16px);
+  padding-bottom: 0.125em;
+}
+.pf2e .admonition .admonition-content h4 {
+  font-size: clamp(12px, 1em, 14px);
+  padding-bottom: 0.5em;
+}
+.pf2e .admonition .admonition-content h5 {
+  font-size: clamp(10px, 0.9375em, 12px);
+  padding-bottom: 0.25em;
+}
+.pf2e .admonition .admonition-content h6 {
+  font-size: clamp(8px, 0.8125em, 10px);
+  padding-bottom: 0.75em;
+}
+.pf2e .admonition .admonition-content h3::before {
+  display: none;
+}
+.pf2e .admonition .admonition-content h3::after,
+.pf2e .admonition .admonition-content h3 .HyperMD-header-3::after {
+  display: none;
+}
+.pf2e .admonition .admonition-content:hover {
+  opacity: 0.2;
+}
+.pf2e .admonition .admonition-content ul, .pf2e .admonition .admonition-content ol {
+  padding: 0;
+}
+.pf2e .admonition .admonition-content ul li:nth-child(n) strong:not(:only-child):after, .pf2e .admonition .admonition-content ol li:nth-child(n) strong:not(:only-child):after {
+  content: ":";
+}
+.pf2e .admonition .admonition-content ul li::marker, .pf2e .admonition .admonition-content ol li::marker {
+  color: #322f2f;
+}
+.pf2e .admonition .admonition-content:hover {
+  color: white;
+}
+
+.callout[data-callout=pf2-note] {
+  border: none;
+  clear: both;
+  font-style: italic;
+}
+.callout[data-callout=pf2-note] .callout-title-inner {
+  font-size: var(--call-fts-h5);
+}
+.callout[data-callout=pf2-note] .callout-title-inner .no-title {
+  font-size: 0;
+}
+
+.callout[data-callout=pf2-example] {
+  --callout-border-opacity: 0.3;
+  --callout-icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="white"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M32 32C32 14.3 46.3 0 64 0S96 14.3 96 32V240H32V32zM224 192c0-17.7 14.3-32 32-32s32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V192zm-64-64c17.7 0 32 14.3 32 32v48c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm160 96c0-17.7 14.3-32 32-32s32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V224zm-96 88l0-.6c9.4 5.4 20.3 8.6 32 8.6c13.2 0 25.4-4 35.6-10.8c8.7 24.9 32.5 42.8 60.4 42.8c11.7 0 22.6-3.1 32-8.6V352c0 88.4-71.6 160-160 160H162.3c-42.4 0-83.1-16.9-113.1-46.9L37.5 453.5C13.5 429.5 0 396.9 0 363V336c0-35.3 28.7-64 64-64h88c22.1 0 40 17.9 40 40s-17.9 40-40 40H96c-8.8 0-16 7.2-16 16s7.2 16 16 16h56c39.8 0 72-32.2 72-72z"/></svg>';
+}
+.callout[data-callout=pf2-example] .callout-title {
+  display: flex;
+}
+.callout[data-callout=pf2-example] .callout-title-inner {
+  flex: 2;
+}
+.callout[data-callout=pf2-example] .callout-icon .svg-icon,
+.callout[data-callout=pf2-example] .callout-icon {
+  display: flow-root;
+}
+.callout[data-callout=pf2-example] td:hover {
+  color: purple;
+}
+
+.callout[data-callout=pf2-key-box] {
+  --callout-border-opacity: 0.3;
+}
+
+.callout[data-callout=pf2-beige] {
+  --callout-color: #edd7ab;
+  --callout-content-background: #edd7ab;
+  background-color: #edd7ab;
+  border-color: hsla(40, 65%, 80%, 0.25);
+}
+.callout[data-callout=pf2-beige] .callout-title {
+  background-color: #edd7ab;
+}
+.callout[data-callout=pf2-beige] .callout-title .callout-title-inner {
+  background-color: #edd7ab;
+}
+.callout[data-callout=pf2-beige] .callout-content {
+  background-color: #edd7ab;
+}
+.callout[data-callout=pf2-beige] .callout-content blockquote {
+  background-color: #edd7ab, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-brown] {
+  --callout-color: #d4ccc4;
+  --callout-content-background: #d4ccc4;
+  background-color: #d4ccc4;
+  border-color: hsla(30, 15%, 80%, 0.25);
+}
+.callout[data-callout=pf2-brown] .callout-title {
+  background-color: #d4ccc4;
+}
+.callout[data-callout=pf2-brown] .callout-title .callout-title-inner {
+  background-color: #d4ccc4;
+}
+.callout[data-callout=pf2-brown] .callout-content {
+  background-color: #d4ccc4;
+}
+.callout[data-callout=pf2-brown] .callout-content blockquote {
+  background-color: #d4ccc4, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-example] {
+  --callout-color: #bdfa9e;
+  --callout-content-background: #bdfa9e;
+  background-color: #bdfa9e;
+  border-color: hsla(100, 90%, 80%, 0.25);
+}
+.callout[data-callout=pf2-example] .callout-title {
+  background-color: #bdfa9e;
+}
+.callout[data-callout=pf2-example] .callout-title .callout-title-inner {
+  background-color: #bdfa9e;
+}
+.callout[data-callout=pf2-example] .callout-content {
+  background-color: #bdfa9e;
+}
+.callout[data-callout=pf2-example] .callout-content blockquote {
+  background-color: #bdfa9e, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-inset] {
+  --callout-color: #e0c9b8;
+  --callout-content-background: #e0c9b8;
+  background-color: #e0c9b8;
+  border-color: hsla(25, 40%, 80%, 0.25);
+}
+.callout[data-callout=pf2-inset] .callout-title {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-inset] .callout-title .callout-title-inner {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-inset] .callout-content {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-inset] .callout-content blockquote {
+  background-color: #e0c9b8, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-key-box] {
+  --callout-color: #bef4e2;
+  --callout-content-background: #bef4e2;
+  background-color: #bef4e2;
+  border-color: hsla(160, 70%, 85%, 0.25);
+}
+.callout[data-callout=pf2-key-box] .callout-title {
+  background-color: #bef4e2;
+}
+.callout[data-callout=pf2-key-box] .callout-title .callout-title-inner {
+  background-color: #bef4e2;
+}
+.callout[data-callout=pf2-key-box] .callout-content {
+  background-color: #bef4e2;
+}
+.callout[data-callout=pf2-key-box] .callout-content blockquote {
+  background-color: #bef4e2, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-note] {
+  --callout-color: #c7d1c9;
+  --callout-content-background: #c7d1c9;
+  background-color: #c7d1c9;
+  border-color: hsla(130, 10%, 80%, 0.25);
+}
+.callout[data-callout=pf2-note] .callout-title {
+  background-color: #c7d1c9;
+}
+.callout[data-callout=pf2-note] .callout-title .callout-title-inner {
+  background-color: #c7d1c9;
+}
+.callout[data-callout=pf2-note] .callout-content {
+  background-color: #c7d1c9;
+}
+.callout[data-callout=pf2-note] .callout-content blockquote {
+  background-color: #c7d1c9, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-paper] {
+  --callout-color: #ded8ba;
+  --callout-content-background: #ded8ba;
+  background-color: #ded8ba;
+  border-color: hsla(50, 35%, 80%, 0.25);
+}
+.callout[data-callout=pf2-paper] .callout-title {
+  background-color: #ded8ba;
+}
+.callout[data-callout=pf2-paper] .callout-title .callout-title-inner {
+  background-color: #ded8ba;
+}
+.callout[data-callout=pf2-paper] .callout-content {
+  background-color: #ded8ba;
+}
+.callout[data-callout=pf2-paper] .callout-content blockquote {
+  background-color: #ded8ba, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-quote] {
+  --callout-color: #e0c2f0;
+  --callout-content-background: #e0c2f0;
+  background-color: #e0c2f0;
+  border-color: hsla(280, 60%, 85%, 0.25);
+}
+.callout[data-callout=pf2-quote] .callout-title {
+  background-color: #e0c2f0;
+}
+.callout[data-callout=pf2-quote] .callout-title .callout-title-inner {
+  background-color: #e0c2f0;
+}
+.callout[data-callout=pf2-quote] .callout-content {
+  background-color: #e0c2f0;
+}
+.callout[data-callout=pf2-quote] .callout-content blockquote {
+  background-color: #e0c2f0, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-red] {
+  --callout-color: #f0aea8;
+  --callout-content-background: #f0aea8;
+  background-color: #f0aea8;
+  border-color: hsla(5, 70%, 80%, 0.25);
+}
+.callout[data-callout=pf2-red] .callout-title {
+  background-color: #f0aea8;
+}
+.callout[data-callout=pf2-red] .callout-title .callout-title-inner {
+  background-color: #f0aea8;
+}
+.callout[data-callout=pf2-red] .callout-content {
+  background-color: #f0aea8;
+}
+.callout[data-callout=pf2-red] .callout-content blockquote {
+  background-color: #f0aea8, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-sidebar] {
+  --callout-color: #e0c9b8;
+  --callout-content-background: #e0c9b8;
+  background-color: #e0c9b8;
+  border-color: hsla(25, 40%, 80%, 0.25);
+}
+.callout[data-callout=pf2-sidebar] .callout-title {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-sidebar] .callout-title .callout-title-inner {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-sidebar] .callout-content {
+  background-color: #e0c9b8;
+}
+.callout[data-callout=pf2-sidebar] .callout-content blockquote {
+  background-color: #e0c9b8, var(--callout-background-alpha);
+}
+
+.callout[data-callout=pf2-tip] {
+  --callout-color: #c6ecec;
+  --callout-content-background: #c6ecec;
+  background-color: #c6ecec;
+  border-color: hsla(180, 50%, 85%, 0.25);
+}
+.callout[data-callout=pf2-tip] .callout-title {
+  background-color: #c6ecec;
+}
+.callout[data-callout=pf2-tip] .callout-title .callout-title-inner {
+  background-color: #c6ecec;
+}
+.callout[data-callout=pf2-tip] .callout-content {
+  background-color: #c6ecec;
+}
+.callout[data-callout=pf2-tip] .callout-content blockquote {
+  background-color: #c6ecec, var(--callout-background-alpha);
+}
+
+.callout[data-callout=success-degree] {
+  --callout-color: #c4b3e6;
+  --callout-content-background: #c4b3e6;
+  background-color: #c4b3e6;
+  border-color: hsla(260, 50%, 80%, 0.25);
+}
+.callout[data-callout=success-degree] .callout-title {
+  background-color: #c4b3e6;
+}
+.callout[data-callout=success-degree] .callout-title .callout-title-inner {
+  background-color: #c4b3e6;
+}
+.callout[data-callout=success-degree] .callout-content {
+  background-color: #c4b3e6;
+}
+.callout[data-callout=success-degree] .callout-content blockquote {
+  background-color: #c4b3e6, var(--callout-background-alpha);
+}
+
+.callout[data-callout=success-degree] .callout-title {
+  display: none;
+}
+.callout[data-callout=success-degree] .callout-title-inner {
+  display: none;
+}
+.callout[data-callout=success-degree] .callout-content ul {
+  list-style-type: disclosure-open;
+  padding-inline-start: 16px;
+}
+.callout[data-callout=success-degree] .callout-content li {
+  line-height: 1;
+}
+.callout[data-callout=success-degree] .callout-content li::before {
+  display: none; /*! Needed for ITS Theme */
+}
+
+body:is(.pt:not(.pt-disable-callout-styling)) .callout .callout-title {
+  border: none;
+  border-radius: 0;
+}
+
+/*! General Settings for #Action Hrefs */
+:is([href$="#Actions"]):is(.internal-link) {
+  cursor: context-menu;
+  display: inline-block;
+  font-size: inherit;
+  height: clamp(18px, 4vw, 26px);
+  vertical-align: bottom;
+  width: clamp(18px, 4vw, 26px);
+}
+
+/*! Single Action Icon*/
+:is([href$="#Actions"][title="Single Action"]):is(.internal-link) {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='2 0 1020 1024'%3E%3Cpath d='M1022 512L510 0 263 247l265 265-265 265 247 247 512-512zM185 329L2 512l183 183 183-183-183-183z'/%3E%3C/svg%3E");
+}
+:is([href$="#Actions"][title="Single Action"]):is(.theme-dark .internal-link) {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='2 0 1020 1024' fill='darkred'%3E%3Cpath d='M1022 512L510 0 263 247l265 265-265 265 247 247 512-512zM185 329L2 512l183 183 183-183-183-183z'/%3E%3C/svg%3E");
+}
+
+/*! Two Action Icon*/
+:is([href$="#Actions"][title=Two-Action]):is(.internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 0 2128 1024" xmlns="http://www.w3.org/2000/svg" fill="black"><path d="M1018 512L507 1 261 248l264 264-264 264 246 247 511-511zM183 329L0 512l183 183 183-183-183-183zm1417 175L1152 56 935 272l232 232-232 232 217 217 448-449z"/></svg>');
+}
+:is([href$="#Actions"][title=Two-Action]):is(.theme-dark .internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 0 2128 1024" xmlns="http://www.w3.org/2000/svg" fill="darkred"><path d="M1018 512L507 1 261 248l264 264-264 264 246 247 511-511zM183 329L0 512l183 183 183-183-183-183zm1417 175L1152 56 935 272l232 232-232 232 217 217 448-449z"/></svg>');
+}
+
+/*! Three Action Icon*/
+:is([href$="#Actions"][title=Three-Action]):is(.internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 0 2118 1024"><path d="m1025 512-512-512-247 247 265 265-265 265 247 247zm1098-10-360-360-175 174 187 186-187 187 175 174zm-1935-173-183 183 183 183 183-183zm1427 175-449-449-218 217 233 232-233 233 218 217z"></path></svg>');
+}
+:is([href$="#Actions"][title=Three-Action]):is(.theme-dark .internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 0 2118 1024" fill="darkred"><path d="m1025 512-512-512-247 247 265 265-265 265 247 247zm1098-10-360-360-175 174 187 186-187 187 175 174zm-1935-173-183 183 183 183 183-183zm1427 175-449-449-218 217 233 232-233 233 218 217z"></path></svg>');
+}
+
+/*! Free Action Icon*/
+:is([href$="#Actions"][title="Free Action"]):is(.internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path d="M516 0L267 250 0 518l509 506 515-515L516 0zM188 496l109-109 109 109-109 109-109-109zm311 380L386 763l251-251-245-246 124-124 359 359-376 375z"/></svg>');
+}
+:is([href$="#Actions"][title="Free Action"]):is(.theme-dark .internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="darkred"><path d="M516 0L267 250 0 518l509 506 515-515L516 0zM188 496l109-109 109 109-109 109-109-109zm311 380L386 763l251-251-245-246 124-124 359 359-376 375z"/></svg>');
+}
+
+/*! Reaction Icon*/
+:is([href$="#Actions"][title=Reaction]):is(.internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 98.24 1024.52 827.76"><path d="M1013 377q-23-71-82-128-60-57-143.5-94T603 105q-101-14-207 1-75 11-140 35t-116 58q-51 34-87 77-36 42-53 89 21-26 50-48 29-23 64.5-41t76.5-31q42-13 88-20 85-12 166-1t148.5 40.5Q661 294 709 340t66 103q18 58 2 113-17 55-60.5 100.5T605 735q-67 32-152 44-28 4-55.5 5.5t-54.5.5q63 14 131.5 17t137.5-7q106-15 190-56 84-40 138-96.5t75-125.5q20-68-2-140zM152 823l489 103-109-149 56-215-436 261z"></path></svg>');
+}
+:is([href$="#Actions"][title=Reaction]):is(.theme-dark .internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 98.24 1024.52 827.76" fill="darkred"><path d="M1013 377q-23-71-82-128-60-57-143.5-94T603 105q-101-14-207 1-75 11-140 35t-116 58q-51 34-87 77-36 42-53 89 21-26 50-48 29-23 64.5-41t76.5-31q42-13 88-20 85-12 166-1t148.5 40.5Q661 294 709 340t66 103q18 58 2 113-17 55-60.5 100.5T605 735q-67 32-152 44-28 4-55.5 5.5t-54.5.5q63 14 131.5 17t137.5-7q106-15 190-56 84-40 138-96.5t75-125.5q20-68-2-140zM152 823l489 103-109-149 56-215-436 261z"></path></svg>');
+}
+
+/*! Varies Icon*/
+:is([href$="#Actions"][title=Varies]):is(.internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="2 2 28 28"><title>load</title><path d="M16 2c-7.732 0-14 6.268-14 14s6.268 14 14 14 14-6.268 14-14-6.268-14-14-14zM28.998 15.952c-3.808 1.889-8.19 1.875-11.971 0 3.625-2.404 5.958-6.273 6.398-10.608 3.352 2.343 5.557 6.22 5.573 10.608zM22.46 4.735c-0.273 4.234-2.484 8.022-5.989 10.353-0.268-4.347-2.447-8.296-5.983-10.845 1.677-0.789 3.54-1.243 5.512-1.243 2.352 0 4.555 0.638 6.46 1.735zM9.471 4.776c3.532 2.354 5.708 6.151 5.974 10.359-3.9-1.941-8.413-2.028-12.389-0.238 0.365-4.322 2.853-8.040 6.415-10.121zM3.002 16.047c3.808-1.887 8.192-1.873 11.972 0.001-3.628 2.405-5.96 6.27-6.4 10.607-3.352-2.343-5.556-6.22-5.572-10.608zM9.542 27.266c0.273-4.236 2.478-8.021 5.987-10.354 0.268 4.352 2.447 8.295 5.984 10.844-1.676 0.79-3.54 1.244-5.513 1.244-2.352 0-4.553-0.637-6.458-1.734zM22.531 27.222c-3.534-2.354-5.711-6.145-5.976-10.359 2.035 1.013 4.237 1.523 6.442 1.523 2.025 0 4.045-0.455 5.949-1.314-0.357 4.334-2.845 8.064-6.415 10.15z"></path></svg>');
+}
+:is([href$="#Actions"][title=Varies]):is(.theme-dark .internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="2 2 28 28" fill="darkred"><title>load</title><path d="M16 2c-7.732 0-14 6.268-14 14s6.268 14 14 14 14-6.268 14-14-6.268-14-14-14zM28.998 15.952c-3.808 1.889-8.19 1.875-11.971 0 3.625-2.404 5.958-6.273 6.398-10.608 3.352 2.343 5.557 6.22 5.573 10.608zM22.46 4.735c-0.273 4.234-2.484 8.022-5.989 10.353-0.268-4.347-2.447-8.296-5.983-10.845 1.677-0.789 3.54-1.243 5.512-1.243 2.352 0 4.555 0.638 6.46 1.735zM9.471 4.776c3.532 2.354 5.708 6.151 5.974 10.359-3.9-1.941-8.413-2.028-12.389-0.238 0.365-4.322 2.853-8.040 6.415-10.121zM3.002 16.047c3.808-1.887 8.192-1.873 11.972 0.001-3.628 2.405-5.96 6.27-6.4 10.607-3.352-2.343-5.556-6.22-5.572-10.608zM9.542 27.266c0.273-4.236 2.478-8.021 5.987-10.354 0.268 4.352 2.447 8.295 5.984 10.844-1.676 0.79-3.54 1.244-5.513 1.244-2.352 0-4.553-0.637-6.458-1.734zM22.531 27.222c-3.534-2.354-5.711-6.145-5.976-10.359 2.035 1.013 4.237 1.523 6.442 1.523 2.025 0 4.045-0.455 5.949-1.314-0.357 4.334-2.845 8.064-6.415 10.15z"></path></svg>');
+}
+
+/*! Free Action Icon*/
+:is([href$="#Actions"][title="Duration or Frequency"]):is(.internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="4.4 0 11.2 20"><title>hour-glass</title><path d="M15.6 4.576c0-2.139 0-2.348 0-2.348 0-0.789-2.508-2.228-5.6-2.228-3.093 0-5.6 1.439-5.6 2.228 0 0 0 0.209 0 2.348 0 2.141 3.877 3.908 3.877 5.424 0 1.514-3.877 3.281-3.877 5.422s0 2.35 0 2.35c0 0.788 2.507 2.228 5.6 2.228 3.092 0 5.6-1.44 5.6-2.229 0 0 0-0.209 0-2.35s-3.877-3.908-3.877-5.422c0-1.515 3.877-3.282 3.877-5.423zM5.941 2.328c0.696-0.439 2-1.082 4.114-1.082s4.006 1.082 4.006 1.082c0.142 0.086 0.698 0.383 0.317 0.609-0.838 0.497-2.478 1.020-4.378 1.020s-3.484-0.576-4.324-1.074c-0.381-0.225 0.265-0.555 0.265-0.555zM10.501 10c0 1.193 0.996 1.961 2.051 2.986 0.771 0.748 1.826 1.773 1.826 2.435v1.328c-0.97-0.483-3.872-0.955-3.872-2.504 0-0.783-1.013-0.783-1.013 0 0 1.549-2.902 2.021-3.872 2.504v-1.328c0-0.662 1.056-1.688 1.826-2.435 1.055-1.025 2.051-1.793 2.051-2.986s-0.996-1.961-2.051-2.986c-0.771-0.75-1.826-1.775-1.826-2.438l-0.046-0.998c1.026 0.553 2.652 1.078 4.425 1.078 1.772 0 3.406-0.525 4.433-1.078l-0.055 0.998c0 0.662-1.056 1.688-1.826 2.438-1.054 1.025-2.051 1.793-2.051 2.986z"></path></svg>');
+}
+:is([href$="#Actions"][title="Duration or Frequency"]):is(.theme-dark .internal-link) {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="4.4 0 11.2 20" fill="darkred"><title>hour-glass</title><path d="M15.6 4.576c0-2.139 0-2.348 0-2.348 0-0.789-2.508-2.228-5.6-2.228-3.093 0-5.6 1.439-5.6 2.228 0 0 0 0.209 0 2.348 0 2.141 3.877 3.908 3.877 5.424 0 1.514-3.877 3.281-3.877 5.422s0 2.35 0 2.35c0 0.788 2.507 2.228 5.6 2.228 3.092 0 5.6-1.44 5.6-2.229 0 0 0-0.209 0-2.35s-3.877-3.908-3.877-5.422c0-1.515 3.877-3.282 3.877-5.423zM5.941 2.328c0.696-0.439 2-1.082 4.114-1.082s4.006 1.082 4.006 1.082c0.142 0.086 0.698 0.383 0.317 0.609-0.838 0.497-2.478 1.020-4.378 1.020s-3.484-0.576-4.324-1.074c-0.381-0.225 0.265-0.555 0.265-0.555zM10.501 10c0 1.193 0.996 1.961 2.051 2.986 0.771 0.748 1.826 1.773 1.826 2.435v1.328c-0.97-0.483-3.872-0.955-3.872-2.504 0-0.783-1.013-0.783-1.013 0 0 1.549-2.902 2.021-3.872 2.504v-1.328c0-0.662 1.056-1.688 1.826-2.435 1.055-1.025 2.051-1.793 2.051-2.986s-0.996-1.961-2.051-2.986c-0.771-0.75-1.826-1.775-1.826-2.438l-0.046-0.998c1.026 0.553 2.652 1.078 4.425 1.078 1.772 0 3.406-0.525 4.433-1.078l-0.055 0.998c0 0.662-1.056 1.688-1.826 2.438-1.054 1.025-2.051 1.793-2.051 2.986z"></path></svg>');
+}
+
+sub {
+  bottom: -0.25em;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  text-align: center;
+  top: -0.5em;
+  vertical-align: baseline;
+}
+
+@media print {
+  h1:after, h3:after, h2:after, h4:after, h5:after, h6:after {
+    content: "";
+    display: block;
+    height: 100px;
+    margin-bottom: -100px;
+  }
+  hr {
+    break-after: page;
+    visibility: hidden;
+  }
+}
+.markdown-preview-view.readable .markdown-preview-sizer {
+  max-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-color: #ded5ba;
+  border-spacing: 1px;
+  box-sizing: border-box;
+  display: table;
+  font-family: sans-serif;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+table .internal-link {
+  color: #5c0a11;
+  font-style: italic;
+  font-weight: 600;
+}
+table.reveal td:nth-child(odd), table.is-live-preview td:nth-child(odd) {
+  background-color: #cdc498;
+}
+table.reveal tr:nth-child(even), table.is-live-preview tr:nth-child(even) {
+  background-color: #e6ddb3;
+  opacity: unset;
+  border-left: 1px solid #ded5ba;
+  border-right: 1px solid #ded5ba;
+}
+table.reveal th, table.is-live-preview th {
+  background-color: #ebcf47;
+  color: #dbd7d7;
+}
+table.markdown-rendered {
+  border-collapse: collapse;
+  margin-block-end: 14px;
+  margin-block-start: 14px;
+}
+table.markdown-rendered thead tr th {
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+table.markdown-rendered thead tr th:nth-child(2n+2) {
+  background-color: #ebcf47;
+}
+table.markdown-rendered tbody tr td {
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+table.markdown-rendered tbody tr td:nth-child(odd) td:hover {
+  background-color: #4d77b3;
+  color: darkgoldenrod;
+}
+table.markdown-rendered tbody tr td:nth-child(odd) td:hover a {
+  color: darkgoldenrod;
+}
+table.markdown-rendered tbody tr td:nth-child(2n+2) {
+  background-color: #cdc498;
+}
+table.markdown-rendered tbody tr:hover td {
+  background-color: #4d77b3;
+  color: darkgoldenrod;
+  font-weight: 700;
+}
+table.markdown-rendered tbody tr:hover td a {
+  color: darkgoldenrod;
+}
+table.markdown-rendered th,
+table.markdown-rendered table th {
+  background-color: #ebcf47;
+  color: #dbd7d7;
+}
+table.markdown-rendered td {
+  border: 1px solid #ded5ba;
+  color: #1b1818;
+  font-size: 16px;
+  max-width: available;
+  padding: 4px 8px;
+}
+table.markdown-rendered td:nth-child(odd) td:hover {
+  background-color: #4d77b3;
+  color: darkgoldenrod;
+}
+table.markdown-rendered td:nth-child(odd) td:hover a {
+  color: darkgoldenrod;
+}
+
+span.cm-list-1 {
+  padding-left: 4px;
+}
+
+b, strong {
+  padding-inline: 4px;
+}
+
+/*# sourceMappingURL=compendium-pf2e.css.map */

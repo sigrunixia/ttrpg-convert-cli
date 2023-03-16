@@ -1,27 +1,25 @@
-//Colors
-@use '5e-variables/dnd5e-callmonition-color';
-// Variable
-@use '5e-variables/dnd5e-callmonition-variables';
+//Variabls
+@use "dnd5e-variables";
 
 // Defaults
-
-/*! Monster: statblocks and #token images */
+// Monster: statblocks and #token images
 .rendered-widget,
 .markdown-rendered,
 .markdown-preview-section {
   .admonition-statblock-parent {
     clear: both;
   }
+
   .callout[data-callout*="statblock"] {
-    --callout-color: var(--dnd5e-statblock-section-line-alt);
     --callout-border-width: 0 0 0 0.08rem;
+    --callout-color: dnd5e-variables.$dnd5e-stat-sect-line;
 
     .callout-title {
       line-height: var(--line-height);
 
       .callout-title-inner {
-        font-size: var(--h3-size);
         flex: 2;
+        font-size: var(--h3-size);
       }
     }
 
@@ -33,12 +31,14 @@
         width: 150px;
       }
     }
+
     .callout-content {
-      background-color: var(--background-primary);
+      background-color: dnd5e-variables.$dnd5e-stat-bg;
 
       > :first-child {
         margin-top: 0.5em;
       }
+
       > :last-child {
         margin-bottom: 0.5em;
       }
@@ -49,25 +49,29 @@
         font-family: var(--default-font);
         font-variant: common-ligatures small-caps;
       }
+
       h1 {
         font-size: 1.4em;
         line-height: 1.4em;
         margin: 0;
         padding: 0;
       }
+
       h2,
       h3 {
+        border-bottom: 1px solid dnd5e-variables.$dnd5e-stat-sect-line;
         font-size: 1.2em;
         line-height: 1.2em;
-        padding: .5em 0 0 0;
-        margin-top: .2em;
         margin-bottom: .3em;
-        border-bottom: 1px solid rgb(var(--dnd5e-statblock-section-line-alt));
+        margin-top: .2em;
+        padding: .5em 0 0 0;
       }
+
       p {
         line-height: 1.2em;
         margin-block-start: .5em;
       }
+
       li {
         line-height: 1.2em;
         margin-block-start: .5em;

@@ -1,0 +1,143 @@
+// Variables
+@use "../../pf2e-variables" as var;
+
+
+// .callmonition {
+//  & .callmonition-title {
+//    & .callmonition-title-inner {
+//    }
+//  }
+//
+//  & .callmonition-content {
+
+@mixin ca-heading($level) {
+  $sizes: (
+    1: var.$call-fts-h1,
+    2: var.$call-fts-h2,
+    3: var.$call-fts-h3,
+    4: var.$call-fts-h4,
+    5: var.$call-fts-h5,
+    6: var.$call-fts-h6,
+  );
+
+  $padding-bottoms: (0.125em, 0.25em, 0.125em, 0.5em, 0.25em, 0.75em);
+
+  @for $i from 1 through 6 {
+    & h#{$i} {
+      font-size: map-get($sizes, $i);
+      padding-bottom: nth($padding-bottoms, $i);
+      // Add custom styles for h3 here
+      @if $i == 3 {
+        &::before {
+          display: none;
+        }
+
+        &::after,
+        .HyperMD-header-3::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//
+//    & blockquote {
+//
+
+@mixin ca-blockquotes {
+  & blockquote {
+    padding: 5px 5px 5px 10px;
+    border-right: 3px solid;
+    border-left: 3px solid;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+  }
+}
+
+//
+//    }
+//
+
+@mixin ca-content-lists {
+  & ul, ol {
+    padding: 0;
+
+    // Will only add a : after Strong List Items with Strong characters
+    // If they are not the only child
+    // Still testing this...
+    li {
+      &:nth-child(n) {
+        strong:not(:only-child) {
+          &:after {
+            content: ":";
+          }
+        }
+      }
+
+      &::marker {
+        color: var.$call-ftu;
+      }
+    }
+  }
+}
+
+// & code {
+@mixin ca-content-code {
+  & code {
+    background-color: var.$call-code-bg;
+    color: var.$call-ftc;
+  }
+}
+
+
+//  }
+//}
+
+
+//  .callout {
+//  & .callout-title {
+//    & .callout-title-inner {
+//    }
+//  }
+
+//    & .callout-content {
+//    background-color: #{$value};
+//      & blockquote {
+//      background-color: (#{$value}, var(--callout-background-alpha));
+//      }
+//    }
+//  }
+
+
+// .admonition {
+//  & .admonition-title {
+//    background-color: #{$value};
+//  }
+
+//  & .admonition-content {
+//    background-color: #{$value};
+
+//    & blockquote {
+//      background-color: (#{$value}, var(--callout-background-alpha));
+//    }
+
+@mixin a-content-copy {
+  .admonition-content-copy {
+    color: var.$call-ftl-active-A;
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+    margin: 0.375rem;
+    right: 0;
+    top: 0;
+    transition: 1s opacity ease-in-out;
+
+    &:hover {
+      color: lighten(var.$call-ftl-active-A, 30%);
+    }
+  }
+}
+
+//  }
+//}
