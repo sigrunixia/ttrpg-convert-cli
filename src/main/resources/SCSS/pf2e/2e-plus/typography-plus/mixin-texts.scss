@@ -1,0 +1,85 @@
+@use '../pf2e-plus-variables' as plus-var;
+
+// Bold
+span.cm-list-1.cm-strong,
+.cm-strong,
+b,
+strong {
+  color: ;
+  font-weight: 700;
+}
+
+// Italic
+.cm-em,
+i, em {
+  font-style: italic;
+  font-weight: 400;
+
+  &:is(.theme-dark) {
+    color: rgba(0, 196, 0, 1);
+  }
+
+  &:not(.pf2-trait) {
+    color: var(--pf2e-font-italic-green);
+
+    &:has(.h1) {
+      font-weight: 700;
+    }
+
+    &:is(.pf2-trait) {
+      color: var(--pf2e-font-italic-green-trait);
+    }
+  }
+
+  .cm-em,
+  i, em:is(.pf2-trait) {
+    color: var(--pf2e-font-italic-green-trait);
+    font-style: italic;
+    font-weight: 400;
+
+    &:has(.h1) {
+      font-weight: 700;
+    }
+  }
+}
+
+// UL/LI Styling
+.markdown-rendered .list-bullet {
+  display: none;
+}
+
+.markdown-rendered ul.has-list-bullet {
+  font-variant-caps: titling-caps;
+  list-style-type: inherit;
+    > li::marker {
+        &:is(.callout,.admonition) {
+        color: var(--callout-content-background);
+        filter: invert(100%);
+    }
+  }
+}
+
+.markdown-rendered ul.has-list-bullet > li::marker {
+  color: currentColor;
+  filter: invert(100%);
+}
+
+.markdown-preview-view ol,
+.markdown-preview-view ul {
+  &:is(.callout, .admonition) {
+    margin-block-end: inherit;
+    margin-block-start: inherit;
+  }
+}
+
+.markdown-source-view ol > li,
+.markdown-source-view ul > li,
+.markdown-preview-view ol > li,
+.markdown-preview-view ul > li,
+.mod-cm6 .HyperMD-list-line.cm-line {
+  &:is(.callout, .admonition) {
+    margin-block-end: inherit;
+    margin-block-start: inherit;
+    padding: inherit;
+  }
+}
