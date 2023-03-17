@@ -1,0 +1,49 @@
+// ------------------------------------------------------
+// Naked embeds.. This code should look familiar ;)
+// Credits to Ebullient for most of this One
+// ------------------------------------------------------
+.markdown-embed {
+  /* Remove extra styling */
+  border: unset;
+  border-radius: unset;
+  margin: unset;
+  padding: unset;
+  position: relative;
+
+  /* Hide embedded header and create uniform padding */
+  &-title,
+  .mod-header {
+    display: none;
+  }
+
+  /* Style link and file embeds */
+  &-link svg,
+  .file-embed-link {
+    height: 18px;
+    width: 18px;
+    right: 0;
+    top: 0;
+    text-align: center;
+    vertical-align: middle;
+    z-index: var(--layer-tooltip);
+  }
+
+  /* Style source and rendered views */
+  &-source-view.invisible-embed,
+  &-rendered.invisible-embed {
+    --embed-border-left: none;
+    --embed-border-right: none;
+    --embed-padding: 0;
+  }
+
+  .markdown-embed-content {
+    /* Remove max height and overflow */
+    max-height: unset;
+    overflow: unset;
+
+    > .markdown-preview-view {
+      /* Remove vertical scroll */
+      overflow-y: unset;
+    }
+  }
+}
