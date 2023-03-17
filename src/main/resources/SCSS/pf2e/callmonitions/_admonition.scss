@@ -1,0 +1,62 @@
+// Variables
+@use "pf2e-callmonition-variables" as call-var;
+// Fixes first
+@use "ca-fixes";
+//Maps
+@use "seed-maps" as admonition-map;
+// Mixins Next
+
+//Time to color this Seed
+@each $key, $value in admonition-map.$pf2e-admonitions {
+  .admonition[data-callout="#{$key}"] {
+    --callout-color: #{$value};
+    --callout-content-background: #{$value};
+    background-color: #{$value};
+    box-shadow: 0 0.2rem 0.5rem #{call-var.$call-box-shadow};
+    // Mixins Here
+
+    // General Stylng Here
+
+    & .admonition-title {
+      // Mixins Here
+
+      // General Stylng Here
+
+
+      & .admonition-title-icon {
+        color: invert($value, 100%);
+        // Mixins Here
+
+        // General Stylng Here
+
+      }
+
+      & .admonition-title-content {
+        background-color: #{$value};
+        // Mixins Here
+
+        // General Stylng Here
+
+      }
+    }
+
+
+    & .admonition-content {
+      background-color: #{$value};
+      // Mixins Here
+
+      & blockquote {
+        $lightness: lightness($value);
+        @if ($lightness > 50) {
+          background-color: hsla(hue($value), saturation($value), $lightness, 1); /* Apply if color is light */
+        } @else {
+          background-color: hsla(hue($value), saturation($value), $lightness, 0.8); /* Apply if color is dark */
+        }
+      }
+
+      //General Stylng Here
+
+
+    }
+  }
+}

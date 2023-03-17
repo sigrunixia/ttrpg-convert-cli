@@ -1,0 +1,67 @@
+// Variables
+@use "pf2e-callmonition-variables" as call-var;
+// Fixes first
+@use "ca-fixes";
+//Maps
+@use "seed-maps" as callout-map;
+// Mixins Next
+
+//Time to color this Seed
+@each $key, $value in callout-map.$pf2e-callouts {
+  .callout[data-callout="#{$key}"] {
+    --callout-color: #{$value};
+    --callout-content-background: #{$value};
+    background-color: #{$value};
+    border-color: hsla(hue($value), saturation($value), lightness($value), call-var.$callout-border-opacity);
+    // Mixins Here
+
+    // General Stylng Here
+
+
+    & .callout-title {
+      background-color: #{$value};
+      // Mixins Here
+
+      // General Stylng Here
+
+
+      & .callout-icon {
+        color: invert($value, 100%);
+        // Mixins Here
+
+        // General Stylng Here
+
+
+      }
+
+      & .callout-title-inner {
+        background-color: #{$value};
+        // Mixins Here
+
+        // General Stylng Here
+
+
+      }
+    }
+
+    & .callout-content {
+      background-color: #{$value};
+      // Mixins Here
+
+
+      & blockquote {
+        $lightness: lightness($value);
+        @if ($lightness > 50) {
+          background-color: hsla(hue($value), saturation($value), $lightness, 1); /* Apply if color is light */
+        } @else {
+          background-color: hsla(hue($value), saturation($value), $lightness, 0.8); /* Apply if color is dark */
+        }
+      }
+
+
+      // General Stylng Here
+
+
+    }
+  }
+}

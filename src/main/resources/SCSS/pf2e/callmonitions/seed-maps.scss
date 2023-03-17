@@ -1,0 +1,31 @@
+@use "../pf2e-callmonition-variables" as call-var;
+//Maps
+$pf2e-callouts: (
+  pf2-beige: call-var.$pf2e-beige,
+  pf2-brown: call-var.$pf2e-brown,
+  pf2-example: call-var.$pf2e-example,
+  pf2-inset: call-var.$pf2e-inset,
+  pf2-key-box: call-var.$pf2e-key-box,
+  pf2-note: call-var.$pf2e-note,
+  pf2-paper: call-var.$pf2e-paper,
+  pf2-quote: call-var.$pf2e-quote,
+  pf2-red: call-var.$pf2e-red,
+  pf2-sidebar: call-var.$pf2e-sidebar,
+  pf2-tip: call-var.$pf2e-tip,
+  success-degree: call-var.$success-degree,
+);
+
+$pf2e-admonitions: (
+  embed-ability: call-var.$embed-ability,
+  embed-action: call-var.$embed-action,
+  embed-avatar: call-var.$embed-avatar,
+  embed-disease: call-var.$embed-disease,
+  embed-feat: call-var.$embed-feat,
+  embed-item: call-var.$embed-item,
+  embed-ritual: call-var.$embed-ritual,
+  inline-affliction: call-var.$inline-affliction,
+  inline-attack: call-var.$inline-attack,
+  // Note appears as both a callout and an admonition
+  pf2-note: call-var.$pf2e-note,
+  pf2-summary: call-var.$pf2e-summary,
+);
