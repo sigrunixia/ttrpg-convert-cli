@@ -3,10 +3,10 @@
 
 // Pf2e Base
 @use "pf2e/pf2e-variables";
-@use "pf2e/pf2e-plus-variables";
+@use "pf2e/2e-plus/pf2e-plus-variables";
 
 @use "compendium-pf2e";
 
 // PF2e Plus Stuff
-@use "pf2e/2e-plus/code";
-@use "pages/pf2e-pages";
+@use "pf2e/2e-plus/plus-typography";
+@use "pf2e/2e-plus/plus-misc";

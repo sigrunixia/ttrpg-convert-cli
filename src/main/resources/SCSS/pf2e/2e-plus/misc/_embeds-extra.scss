@@ -2,18 +2,33 @@
 // Naked embeds.. This code should look familiar ;)
 // Credits to Ebullient for most of this One
 // ------------------------------------------------------
+@use "../../pf2e-variables" as var;
+
+@function darken-if($color, $amount) {
+  @if selector-nest(".theme-dark") {
+    @return darken($color, $amount);
+  } @else {
+    @return $color;
+  }
+}
+
+$dark-theme-br: 10%;
+$callout-border-opacity: 25%;
+
 .markdown-embed {
   /* Remove extra styling */
-  border: unset;
-  border-radius: unset;
-  margin: unset;
-  padding: unset;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
   position: relative;
 
   /* Hide embedded header and create uniform padding */
-  &-title,
+  & .embed-title,
   .mod-header {
     display: none;
+    gap: 0;
+    padding: 0;
   }
 
   /* Style link and file embeds */
@@ -46,4 +61,27 @@
       overflow-y: unset;
     }
   }
+}
+
+.markdown-source-view {
+  &.internal-embed.markdown-embed {
+    &-title {
+      display: none !important;
+      gap: 0;
+      font-size: 0;
+      padding: 0 0 0 0;
+    }
+  }
+}
+
+.embed-title {
+  align-items: center;
+  display: none;
+  gap: var(--size-4-1);
+  font-size: var(--font-text-size);
+  font-weight: var(--bold-weight);
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 0 var(--size-4-2) 0;
 }
